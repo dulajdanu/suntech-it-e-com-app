@@ -34,5 +34,17 @@ class WelcomeView extends StatelessWidget {
         ],
       ),
     );
+    //   body: Container(
+    //     decoration: const BoxDecoration(
+    //       gradient: RadialGradient(
+    //         colors: [
+    //           Color(0xff4479D5),
+    //           Color(0xff2EB0E0),
+    //         ],
+    //       ),
+
+    //     ),
+    //   ),
+    // );
   }
 }
