@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:suntech_it_e_com_app/core/constants/app_constants.dart';
-import 'package:suntech_it_e_com_app/core/constants/widgets/app_background_custom.dart';
-import 'package:suntech_it_e_com_app/core/constants/widgets/text_custom.dart';
-import 'package:suntech_it_e_com_app/core/constants/widgets/text_field_custom.dart';
+import 'package:suntech_it_e_com_app/core/widgets/custom_widgets.dart';
 import 'package:suntech_it_e_com_app/features/auth/login/presentation/pages/login_page.dart';
-import 'package:suntech_it_e_com_app/features/auth/verification/presentation/pages/verification_page.dart';
-import 'package:suntech_it_e_com_app/features/auth/widgets/auth_action_button_widget.dart';
+import 'package:suntech_it_e_com_app/features/auth/sign_up/presentation/widgets/confirm_password_input_widget.dart';
+import 'package:suntech_it_e_com_app/features/auth/sign_up/presentation/widgets/full_name_input_widget.dart';
+import 'package:suntech_it_e_com_app/features/auth/sign_up/presentation/widgets/sign_up_button_widget.dart';
+import 'package:suntech_it_e_com_app/features/auth/widgets/email_input_widget.dart';
+import 'package:suntech_it_e_com_app/features/auth/widgets/password_input_widget.dart';
 import 'package:suntech_it_e_com_app/features/auth/widgets/social_media_sign_in_button_widget.dart';
 
 class SignUpView extends StatelessWidget {
@@ -28,49 +28,11 @@ class SignUpView extends StatelessWidget {
             marginTop: 38.58.h,
             marginBottom: 42.h,
           ),
-          TextFieldCustom(
-            hintText: "Full Name",
-            prefixIcon: FontAwesomeIcons.user, //todo add the correct icon here
-            margins: EdgeInsets.only(
-              bottom: 19.h,
-            ),
-          ),
-          TextFieldCustom(
-            hintText: "abc@email.com",
-            margins: EdgeInsets.only(
-              bottom: 19.h,
-            ),
-            prefixIcon: Icons.mail, //todo add the correct icon here
-          ),
-          TextFieldCustom(
-            hintText: "Your password",
-            prefixIcon: Icons.lock,
-            obscureText: true,
-            margins: EdgeInsets.only(
-              bottom: 19.h,
-            ),
-          ),
-          TextFieldCustom(
-            hintText: "Confirm password",
-            prefixIcon: Icons.lock,
-            obscureText: true,
-            margins: EdgeInsets.only(
-              bottom: 40.h,
-            ),
-          ),
-          AuthActionButtonWidget(
-            buttonText: 'Sign up',
-            callback: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const VerificationPage(),
-                  ));
-            },
-            margin: EdgeInsets.symmetric(
-              horizontal: 23.w,
-            ),
-          ),
+          const FullNameInputWidget(),
+          const EmailInputWidget(),
+          const PasswordInputWidget(),
+          const ConfirmPasswordInputWidget(),
+          const SignUpButtonWidget(),
           TextCustomWidget(
             text: "OR",
             marginTop: 36.h,

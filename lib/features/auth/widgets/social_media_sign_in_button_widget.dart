@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:suntech_it_e_com_app/core/constants/widgets/text_custom.dart';
+import 'package:suntech_it_e_com_app/core/widgets/custom_widgets.dart';
 
 class SocialMediaSignInButtonWidget extends StatelessWidget {
   const SocialMediaSignInButtonWidget({

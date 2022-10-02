@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:suntech_it_e_com_app/core/constants/app_constants.dart';
-import 'package:suntech_it_e_com_app/core/constants/widgets/app_background_custom.dart';
-import 'package:suntech_it_e_com_app/core/constants/widgets/text_custom.dart';
-import 'package:suntech_it_e_com_app/core/constants/widgets/text_field_custom.dart';
+import 'package:suntech_it_e_com_app/core/widgets/custom_widgets.dart';
 import 'package:suntech_it_e_com_app/features/auth/widgets/auth_action_button_widget.dart';
 import 'package:suntech_it_e_com_app/features/main_page/presentation/pages/main_page.dart';
 

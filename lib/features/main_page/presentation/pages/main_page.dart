@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:suntech_it_e_com_app/core/constants/app_constants.dart';
-import 'package:suntech_it_e_com_app/core/constants/widgets/app_background_custom.dart';
-import 'package:suntech_it_e_com_app/core/constants/widgets/app_bar_custom.dart';
-import 'package:suntech_it_e_com_app/core/constants/widgets/text_custom.dart';
+import 'package:suntech_it_e_com_app/core/widgets/custom_widgets.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);

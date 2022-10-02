@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:suntech_it_e_com_app/core/constants/app_constants.dart';
-import 'package:suntech_it_e_com_app/core/constants/widgets/text_custom.dart';
+import 'package:suntech_it_e_com_app/core/widgets/custom_widgets.dart';
 
 ///This button is used in the sign in and signup pages
 class AuthActionButtonWidget extends StatelessWidget {
@@ -10,11 +10,14 @@ class AuthActionButtonWidget extends StatelessWidget {
     required this.buttonText,
     required this.callback,
     this.margin,
+    this.isDisabled,
   }) : super(key: key);
   final String buttonText;
   final VoidCallback callback;
 
   final EdgeInsets? margin;
+
+  final bool? isDisabled;
 
   @override
   Widget build(BuildContext context) {
@@ -32,8 +35,9 @@ class AuthActionButtonWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(15.h),
           ),
           padding: EdgeInsets.zero,
+          onSurface: Colors.lightBlue,
         ),
-        onPressed: callback,
+        onPressed: isDisabled == true ? null : callback,
         child: Container(
           padding: EdgeInsets.symmetric(
             horizontal: 14.w,

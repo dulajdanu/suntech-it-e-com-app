@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:suntech_it_e_com_app/core/constants/app_constants.dart';
-import 'package:suntech_it_e_com_app/core/constants/widgets/app_bar_custom.dart';
+import 'package:suntech_it_e_com_app/core/widgets/app_bar_custom.dart';
 
 class AppBackgroundCustom extends StatelessWidget {
   const AppBackgroundCustom({
