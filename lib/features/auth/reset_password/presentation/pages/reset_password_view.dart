@@ -5,6 +5,7 @@ import 'package:suntech_it_e_com_app/core/constants/widgets/app_background_custo
 import 'package:suntech_it_e_com_app/core/constants/widgets/text_custom.dart';
 import 'package:suntech_it_e_com_app/core/constants/widgets/text_field_custom.dart';
 import 'package:suntech_it_e_com_app/features/auth/widgets/auth_action_button_widget.dart';
+import 'package:suntech_it_e_com_app/features/main_page/presentation/pages/main_page.dart';
 
 class ResetPasswordView extends StatelessWidget {
   const ResetPasswordView({Key? key}) : super(key: key);
@@ -42,7 +43,13 @@ class ResetPasswordView extends StatelessWidget {
           ),
           AuthActionButtonWidget(
             buttonText: 'Send',
-            callback: () {},
+            callback: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const MainPage(),
+                  ));
+            },
             margin: EdgeInsets.symmetric(
               horizontal: 23.w,
             ),

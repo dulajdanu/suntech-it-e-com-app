@@ -26,4 +26,7 @@ class AppConstants {
 
   ///main blue color of the buttons
   static const mainBlueColor = Color(0xff4C86D9);
+
+  ///Home page horizontal margin
+  static final homePageHorizontalMargin = 30.w;
 }
