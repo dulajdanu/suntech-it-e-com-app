@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:suntech_it_e_com_app/core/constants/app_constants.dart';
-import 'package:suntech_it_e_com_app/core/constants/widgets/app_bar_custom.dart';
+import 'package:suntech_it_e_com_app/core/constants/widgets/app_background_custom.dart';
 import 'package:suntech_it_e_com_app/core/constants/widgets/text_custom.dart';
 import 'package:suntech_it_e_com_app/core/constants/widgets/text_field_custom.dart';
+import 'package:suntech_it_e_com_app/features/auth/sign_up/presentation/pages/sign_up_page.dart';
+import 'package:suntech_it_e_com_app/features/auth/widgets/auth_action_button_widget.dart';
+import 'package:suntech_it_e_com_app/features/auth/widgets/social_media_sign_in_button_widget.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppConstants.backgroundColor,
-      appBar: const AppBarCustom(),
-      body: Column(
+    return AppBackgroundCustom(
+      bodyWidget: Column(
         children: [
           TextCustomWidget(
             marginTop: 34.h,
@@ -45,12 +46,13 @@ class LoginView extends StatelessWidget {
           ),
           Container(
             height: 23.h,
-            color: Colors.redAccent,
+            // color: Colors.redAccent,
             margin: EdgeInsets.symmetric(
                 horizontal: AppConstants.defaultHorizontalMargin),
             child: Row(
               children: [
                 Switch(
+                  //todo add the correct widget here like in the design
                   // This bool value toggles the switch.
                   value: false,
                   activeColor: Colors.red,
@@ -86,59 +88,69 @@ class LoginView extends StatelessWidget {
           SizedBox(
             height: 36.h,
           ),
+          //
+          AuthActionButtonWidget(
+            buttonText: "Sign in",
+            callback: () {},
+          ),
+          TextCustomWidget(
+            text: "OR",
+            marginTop: 34.h,
+            marginBottom: 10.h,
+            textStyle: TextStyle(
+              fontWeight: FontWeight.w500,
+              fontSize: 16.sp,
+              color: const Color(0xff9D9898),
+            ),
+            containerAlignment: Alignment.center,
+          ),
+          SocialMediaSignInButtonWidget(
+            callback: () {},
+            buttonType: ButtonType.google,
+          ),
+          SizedBox(
+            height: 17.h,
+          ),
+          SocialMediaSignInButtonWidget(
+            buttonType: ButtonType.facebook,
+            callback: () {},
+          ),
+          SizedBox(
+            height: 20.h,
+          ),
           Container(
-            height: 58.h,
-            width: 271.w,
-            // color: Colors.greenAccent,
-            alignment: Alignment.center,
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15.h),
-                ),
-                padding: EdgeInsets.zero,
-              ),
-              onPressed: () {},
-              child: Container(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 14.w,
-                  vertical: 14.h,
-                ),
-                height: 58.h,
-                width: 271.w,
-                child: Container(
-                  // color: Colors.greenAccent,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        width: 30.w,
-                        // color: Colors.red,
-                      ),
-                      TextCustomWidget(
-                        text: "Sign in".toUpperCase(),
-                        textStyle: TextStyle(
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                      Container(
-                        width: 30.w,
-                        height: 30.w,
-                        decoration: const BoxDecoration(
-                          color: Colors.white,
-                          shape: BoxShape.circle,
-                        ),
-                        alignment: Alignment.center,
-                        child: const Icon(
-                          Icons.arrow_right_alt_outlined,
-                          color: AppConstants.buttonBlueColor,
-                        ),
-                      ),
-                    ],
+            margin: EdgeInsets.symmetric(
+              horizontal: AppConstants.defaultHorizontalMargin,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextCustomWidget(
+                  text: 'Don\'t have an account? ',
+                  textStyle: TextStyle(
+                    color: Colors.white,
+                    fontSize: 15.sp,
+                    fontWeight: FontWeight.w400,
                   ),
                 ),
-              ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SignUpPage(),
+                        ));
+                  },
+                  child: TextCustomWidget(
+                    text: 'Sign up ',
+                    textStyle: TextStyle(
+                      color: AppConstants.mainBlueColor,
+                      fontSize: 15.sp,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ),
+              ],
             ),
           )
         ],

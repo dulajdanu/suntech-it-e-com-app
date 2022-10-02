@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class AppConstants {
   static const backgroundColor = Color(0xff1F1F1F);
 
-  static final headingTextStyle = GoogleFonts.barlow(
+  static final headingTextStyle = TextStyle(
     fontSize: 24.sp,
     fontWeight: FontWeight.w500,
     color: Colors.white,
@@ -26,5 +25,5 @@ class AppConstants {
   static const textFieldIconColor = Color(0xff807A7A);
 
   ///main blue color of the buttons
-  static const buttonBlueColor = Color(0xff4C86D9);
+  static const mainBlueColor = Color(0xff4C86D9);
 }
