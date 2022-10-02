@@ -6,6 +6,7 @@ import 'package:suntech_it_e_com_app/core/constants/widgets/app_background_custo
 import 'package:suntech_it_e_com_app/core/constants/widgets/text_custom.dart';
 import 'package:suntech_it_e_com_app/core/constants/widgets/text_field_custom.dart';
 import 'package:suntech_it_e_com_app/features/auth/login/presentation/pages/login_page.dart';
+import 'package:suntech_it_e_com_app/features/auth/verification/presentation/pages/verification_page.dart';
 import 'package:suntech_it_e_com_app/features/auth/widgets/auth_action_button_widget.dart';
 import 'package:suntech_it_e_com_app/features/auth/widgets/social_media_sign_in_button_widget.dart';
 
@@ -59,7 +60,13 @@ class SignUpView extends StatelessWidget {
           ),
           AuthActionButtonWidget(
             buttonText: 'Sign up',
-            callback: () {},
+            callback: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const VerificationPage(),
+                  ));
+            },
             margin: EdgeInsets.symmetric(
               horizontal: 23.w,
             ),
