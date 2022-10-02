@@ -24,4 +24,7 @@ class AppConstants {
 
   //Color of icon in the text field
   static const textFieldIconColor = Color(0xff807A7A);
+
+  ///main blue color of the buttons
+  static const buttonBlueColor = Color(0xff4C86D9);
 }
