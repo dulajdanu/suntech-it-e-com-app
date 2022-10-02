@@ -4,6 +4,7 @@ import 'package:suntech_it_e_com_app/core/constants/app_constants.dart';
 import 'package:suntech_it_e_com_app/core/constants/widgets/app_background_custom.dart';
 import 'package:suntech_it_e_com_app/core/constants/widgets/text_custom.dart';
 import 'package:suntech_it_e_com_app/core/constants/widgets/text_field_custom.dart';
+import 'package:suntech_it_e_com_app/features/auth/reset_password/presentation/pages/reset_password_page.dart';
 import 'package:suntech_it_e_com_app/features/auth/sign_up/presentation/pages/sign_up_page.dart';
 import 'package:suntech_it_e_com_app/features/auth/widgets/auth_action_button_widget.dart';
 import 'package:suntech_it_e_com_app/features/auth/widgets/social_media_sign_in_button_widget.dart';
@@ -72,6 +73,20 @@ class LoginView extends StatelessWidget {
                   ),
                 ),
                 Expanded(
+                  child: Container(
+                      // color: Colors.green,
+                      // child: ,
+                      ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    //
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ResetPasswordPage(),
+                        ));
+                  },
                   child: TextCustomWidget(
                     containerAlignment: Alignment.centerRight,
                     text: 'Forgot Password?',
@@ -81,7 +96,7 @@ class LoginView extends StatelessWidget {
                       color: AppConstants.inputTextColor,
                     ),
                   ),
-                ),
+                )
               ],
             ),
           ),
