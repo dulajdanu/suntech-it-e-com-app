@@ -1,1 +1,3 @@
-abstract class LoginRepository {}
+abstract class LoginRepository {
+  // RvfEitherUnit
+}

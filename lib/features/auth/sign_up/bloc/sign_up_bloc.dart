@@ -5,43 +5,60 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:suntech_it_e_com_app/features/auth/auth_form_models/auth_form_models.dart';
+import 'package:suntech_it_e_com_app/features/auth/sign_up/data/repositories/sign_up_repository.dart';
 part 'sign_up_event.dart';
 part 'sign_up_state.dart';
 part 'sign_up_bloc.freezed.dart';
 
 class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
-  SignUpBloc() : super(const SignUpState()) {
+  final SignUpRepository _signUpRepository;
+  SignUpBloc({required SignUpRepository signUpRepository})
+      : _signUpRepository = signUpRepository,
+        super(const SignUpState()) {
     on<SignUpEvent>((event, emit) async {
-      event.whenOrNull(
-        fullNameChanged: (value) {
-          final fname = Name.dirty(value);
-          emit(validateSignupFormStatus(state.copyWith(fullName: fname)));
-        },
-        emailChanged: (value) {
-          final email = Email.dirty(value);
-          emit(validateSignupFormStatus(state.copyWith(email: email)));
-        },
-        passwordChanged: (value) {
-          final password = Password.dirty(value);
-          emit(validateSignupFormStatus(state.copyWith(password: password)));
-        },
-        confirmPasswordChanged: (value) {
-          final cPassword = ConfirmPassword.dirty(value, state.password.value);
-          emit(validateSignupFormStatus(
-              state.copyWith(confirmPassword: cPassword)));
-        },
-        changePasswordVisibility: (isConfirmPassowrd) {
-          if (isConfirmPassowrd == true) {
+      await event.whenOrNull(fullNameChanged: (value) {
+        final fname = Name.dirty(value);
+        emit(validateSignupFormStatus(state.copyWith(fullName: fname)));
+      }, emailChanged: (value) {
+        final email = Email.dirty(value);
+        emit(validateSignupFormStatus(state.copyWith(email: email)));
+      }, passwordChanged: (value) {
+        final password = Password.dirty(value);
+        emit(validateSignupFormStatus(state.copyWith(password: password)));
+      }, confirmPasswordChanged: (value) {
+        final cPassword = ConfirmPassword.dirty(value, state.password.value);
+        emit(validateSignupFormStatus(
+            state.copyWith(confirmPassword: cPassword)));
+      }, changePasswordVisibility: (isConfirmPassowrd) {
+        if (isConfirmPassowrd == true) {
+          emit(state.copyWith(
+            hideConfirmPassword: !state.hideConfirmPassword,
+          ));
+        } else {
+          emit(state.copyWith(
+            hidePassword: !state.hidePassword,
+          ));
+        }
+      }, submit: () async {
+        final result = await _signUpRepository.signUpNewUser(
+            state.fullName, state.email, state.password);
+
+        result.fold(
+          (l) {
+            //emit the error state
             emit(state.copyWith(
-              hideConfirmPassword: !state.hideConfirmPassword,
+              signupFormStatus: FormzStatus.submissionFailure,
+              submissionFailureMessage: l.message,
             ));
-          } else {
+          },
+          (r) {
+            //emit the success state
             emit(state.copyWith(
-              hidePassword: !state.hidePassword,
+              signupFormStatus: FormzStatus.submissionSuccess,
             ));
-          }
-        },
-      );
+          },
+        );
+      });
     });
   }
 
