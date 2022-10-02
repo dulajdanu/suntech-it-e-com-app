@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:suntech_it_e_com_app/core/errors/exceptions/exceptions.dart';
 import 'package:suntech_it_e_com_app/core/errors/failures/failure.dart';
+import 'package:suntech_it_e_com_app/core/models/response_model.dart';
 import 'package:suntech_it_e_com_app/core/type_defs/type_defs.dart';
 import 'package:suntech_it_e_com_app/features/auth/auth_form_models/password/password.dart';
 import 'package:suntech_it_e_com_app/features/auth/auth_form_models/name/name.dart';
@@ -13,7 +14,7 @@ class SignUpRepsitoryImpl extends SignUpRepository {
   SignUpRepsitoryImpl({required SignUpDatasource signUpDatasource})
       : _signUpDatasource = signUpDatasource;
   @override
-  RvfEitherUnit signUpNewUser(
+  RvfEither<ResponseModel> signUpNewUser(
       Name fullName, Email email, Password password) async {
     try {
       final result =

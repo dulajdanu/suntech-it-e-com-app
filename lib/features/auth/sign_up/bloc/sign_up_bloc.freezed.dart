@@ -1086,6 +1086,9 @@ mixin _$SignUpState {
   ///The error message for invalid input
   String? get submissionFailureMessage => throw _privateConstructorUsedError;
 
+  ///response for the request
+  ResponseModel? get responseModel => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $SignUpStateCopyWith<SignUpState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1104,7 +1107,10 @@ abstract class $SignUpStateCopyWith<$Res> {
       FormzStatus signupFormStatus,
       bool hidePassword,
       bool hideConfirmPassword,
-      String? submissionFailureMessage});
+      String? submissionFailureMessage,
+      ResponseModel? responseModel});
+
+  $ResponseModelCopyWith<$Res>? get responseModel;
 }
 
 /// @nodoc
@@ -1125,6 +1131,7 @@ class _$SignUpStateCopyWithImpl<$Res> implements $SignUpStateCopyWith<$Res> {
     Object? hidePassword = freezed,
     Object? hideConfirmPassword = freezed,
     Object? submissionFailureMessage = freezed,
+    Object? responseModel = freezed,
   }) {
     return _then(_value.copyWith(
       fullName: fullName == freezed
@@ -1159,7 +1166,22 @@ class _$SignUpStateCopyWithImpl<$Res> implements $SignUpStateCopyWith<$Res> {
           ? _value.submissionFailureMessage
           : submissionFailureMessage // ignore: cast_nullable_to_non_nullable
               as String?,
+      responseModel: responseModel == freezed
+          ? _value.responseModel
+          : responseModel // ignore: cast_nullable_to_non_nullable
+              as ResponseModel?,
     ));
+  }
+
+  @override
+  $ResponseModelCopyWith<$Res>? get responseModel {
+    if (_value.responseModel == null) {
+      return null;
+    }
+
+    return $ResponseModelCopyWith<$Res>(_value.responseModel!, (value) {
+      return _then(_value.copyWith(responseModel: value));
+    });
   }
 }
 
@@ -1178,7 +1200,11 @@ abstract class _$$_SignUpStateCopyWith<$Res>
       FormzStatus signupFormStatus,
       bool hidePassword,
       bool hideConfirmPassword,
-      String? submissionFailureMessage});
+      String? submissionFailureMessage,
+      ResponseModel? responseModel});
+
+  @override
+  $ResponseModelCopyWith<$Res>? get responseModel;
 }
 
 /// @nodoc
@@ -1201,6 +1227,7 @@ class __$$_SignUpStateCopyWithImpl<$Res> extends _$SignUpStateCopyWithImpl<$Res>
     Object? hidePassword = freezed,
     Object? hideConfirmPassword = freezed,
     Object? submissionFailureMessage = freezed,
+    Object? responseModel = freezed,
   }) {
     return _then(_$_SignUpState(
       fullName: fullName == freezed
@@ -1235,6 +1262,10 @@ class __$$_SignUpStateCopyWithImpl<$Res> extends _$SignUpStateCopyWithImpl<$Res>
           ? _value.submissionFailureMessage
           : submissionFailureMessage // ignore: cast_nullable_to_non_nullable
               as String?,
+      responseModel: responseModel == freezed
+          ? _value.responseModel
+          : responseModel // ignore: cast_nullable_to_non_nullable
+              as ResponseModel?,
     ));
   }
 }
@@ -1250,7 +1281,8 @@ class _$_SignUpState implements _SignUpState {
       this.signupFormStatus = FormzStatus.pure,
       this.hidePassword = true,
       this.hideConfirmPassword = true,
-      this.submissionFailureMessage});
+      this.submissionFailureMessage,
+      this.responseModel});
 
   ///full name of the user
   @override
@@ -1291,9 +1323,13 @@ class _$_SignUpState implements _SignUpState {
   @override
   final String? submissionFailureMessage;
 
+  ///response for the request
+  @override
+  final ResponseModel? responseModel;
+
   @override
   String toString() {
-    return 'SignUpState(fullName: $fullName, email: $email, password: $password, confirmPassword: $confirmPassword, signupFormStatus: $signupFormStatus, hidePassword: $hidePassword, hideConfirmPassword: $hideConfirmPassword, submissionFailureMessage: $submissionFailureMessage)';
+    return 'SignUpState(fullName: $fullName, email: $email, password: $password, confirmPassword: $confirmPassword, signupFormStatus: $signupFormStatus, hidePassword: $hidePassword, hideConfirmPassword: $hideConfirmPassword, submissionFailureMessage: $submissionFailureMessage, responseModel: $responseModel)';
   }
 
   @override
@@ -1313,7 +1349,9 @@ class _$_SignUpState implements _SignUpState {
             const DeepCollectionEquality()
                 .equals(other.hideConfirmPassword, hideConfirmPassword) &&
             const DeepCollectionEquality().equals(
-                other.submissionFailureMessage, submissionFailureMessage));
+                other.submissionFailureMessage, submissionFailureMessage) &&
+            const DeepCollectionEquality()
+                .equals(other.responseModel, responseModel));
   }
 
   @override
@@ -1326,7 +1364,8 @@ class _$_SignUpState implements _SignUpState {
       const DeepCollectionEquality().hash(signupFormStatus),
       const DeepCollectionEquality().hash(hidePassword),
       const DeepCollectionEquality().hash(hideConfirmPassword),
-      const DeepCollectionEquality().hash(submissionFailureMessage));
+      const DeepCollectionEquality().hash(submissionFailureMessage),
+      const DeepCollectionEquality().hash(responseModel));
 
   @JsonKey(ignore: true)
   @override
@@ -1343,7 +1382,8 @@ abstract class _SignUpState implements SignUpState {
       final FormzStatus signupFormStatus,
       final bool hidePassword,
       final bool hideConfirmPassword,
-      final String? submissionFailureMessage}) = _$_SignUpState;
+      final String? submissionFailureMessage,
+      final ResponseModel? responseModel}) = _$_SignUpState;
 
   @override
 
@@ -1377,6 +1417,10 @@ abstract class _SignUpState implements SignUpState {
 
   ///The error message for invalid input
   String? get submissionFailureMessage;
+  @override
+
+  ///response for the request
+  ResponseModel? get responseModel;
   @override
   @JsonKey(ignore: true)
   _$$_SignUpStateCopyWith<_$_SignUpState> get copyWith =>
