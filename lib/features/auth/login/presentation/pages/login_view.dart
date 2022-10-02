@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:suntech_it_e_com_app/core/constants/app_constants.dart';
 import 'package:suntech_it_e_com_app/core/widgets/custom_widgets.dart';
+import 'package:suntech_it_e_com_app/features/auth/login/bloc/login_bloc.dart';
+import 'package:suntech_it_e_com_app/features/auth/login/presentation/widgets/login_bloc_builder.dart';
+import 'package:suntech_it_e_com_app/features/auth/login/presentation/widgets/login_button_widget.dart';
 import 'package:suntech_it_e_com_app/features/auth/reset_password/presentation/pages/reset_password_page.dart';
 import 'package:suntech_it_e_com_app/features/auth/sign_up/presentation/pages/sign_up_page.dart';
-import 'package:suntech_it_e_com_app/features/auth/widgets/auth_action_button_widget.dart';
+import 'package:suntech_it_e_com_app/features/auth/widgets/email_input_widget.dart';
+import 'package:suntech_it_e_com_app/features/auth/widgets/password_input_widget.dart';
 import 'package:suntech_it_e_com_app/features/auth/widgets/social_media_sign_in_button_widget.dart';
 
 class LoginView extends StatelessWidget {
@@ -22,23 +26,14 @@ class LoginView extends StatelessWidget {
             textStyle: AppConstants.headingTextStyle,
             containerAlignment: Alignment.center,
           ),
-          TextFieldCustom(
-            margins: EdgeInsets.symmetric(
-              horizontal: AppConstants.defaultHorizontalMargin,
-            ),
-            hintText: "abc@gmail.com",
-            prefixIcon: Icons.mail,
+          const EmailInputWidget(
+            isLogin: true,
           ),
           SizedBox(
             height: 19.h,
           ),
-          TextFieldCustom(
-            margins: EdgeInsets.symmetric(
-              horizontal: AppConstants.defaultHorizontalMargin,
-            ),
-            hintText: "Your password",
-            prefixIcon: Icons.lock,
-            obscureText: true,
+          const PasswordInputWidget(
+            isLogin: true,
           ),
           SizedBox(
             height: 22.h,
@@ -50,16 +45,16 @@ class LoginView extends StatelessWidget {
                 horizontal: AppConstants.defaultHorizontalMargin),
             child: Row(
               children: [
-                Switch(
-                  //todo add the correct widget here like in the design
-                  // This bool value toggles the switch.
-                  value: false,
-                  activeColor: Colors.red,
-                  onChanged: (bool value) {
-                    // This is called when the user toggles the switch.
-                    // setState(() {
-                    //   light = value;
-                    // });
+                LoginBlocBuilder(
+                  builder: (context, state) {
+                    return Switch(
+                      //todo add the correct widget here like in the design
+                      value: state.rememberUser,
+                      activeColor: AppConstants.mainBlueColor,
+                      onChanged: (bool value) {
+                        context.addLoginEvent(const LoginEvent.rememberUser());
+                      },
+                    );
                   },
                 ),
                 TextCustomWidget(
@@ -102,10 +97,7 @@ class LoginView extends StatelessWidget {
             height: 36.h,
           ),
           //
-          AuthActionButtonWidget(
-            buttonText: "Sign in",
-            callback: () {},
-          ),
+          const LoginButtonWidget(),
           TextCustomWidget(
             text: "OR",
             marginTop: 34.h,
