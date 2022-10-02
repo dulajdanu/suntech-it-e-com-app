@@ -8,6 +8,8 @@ class AppBackgroundCustom extends StatelessWidget {
     this.backgroundColor,
     this.appBar,
     required this.bodyWidget,
+    this.bottomNavigationBar,
+    this.floatingActionButton,
   }) : super(key: key);
 
   ///This is the background color of the screen
@@ -19,12 +21,18 @@ class AppBackgroundCustom extends StatelessWidget {
   ///This will be the body of the screen
   final Widget bodyWidget;
 
+  final BottomNavigationBar? bottomNavigationBar;
+
+  final FloatingActionButton? floatingActionButton;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor ?? AppConstants.backgroundColor,
       appBar: appBar ?? const AppBarCustom(),
       body: bodyWidget,
+      bottomNavigationBar: bottomNavigationBar,
+      floatingActionButton: floatingActionButton,
     );
   }
 }

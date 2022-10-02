@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:suntech_it_e_com_app/core/constants/app_constants.dart';
 import 'package:suntech_it_e_com_app/core/constants/widgets/app_background_custom.dart';
 import 'package:suntech_it_e_com_app/core/constants/widgets/app_bar_custom.dart';
@@ -11,6 +12,9 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBackgroundCustom(
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+        ),
         appBar: AppBarCustom(
           leadingWidget: IconButton(
             onPressed: () {},
@@ -21,6 +25,31 @@ class MainPage extends StatelessWidget {
                 EdgeInsets.only(right: AppConstants.homePageHorizontalMargin),
             child: const Icon(Icons.notifications_outlined),
           ),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.green,
+          unselectedItemColor: Colors.orange,
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(FontAwesomeIcons.heart),
+              label: 'Fav',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.shopping_cart),
+              label: 'Cart',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: 'Profile',
+            ),
+          ],
+          currentIndex: 0,
+          selectedItemColor: Colors.amber[800],
+          onTap: (index) {},
         ),
         bodyWidget: Column(
           children: [
