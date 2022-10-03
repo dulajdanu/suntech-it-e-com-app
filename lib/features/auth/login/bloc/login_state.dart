@@ -20,5 +20,8 @@ class LoginState with _$LoginState {
 
     ///response for the request
     ResponseModel? responseModel,
+
+    ///User model which is returned after successfully signining in
+    User? user,
   }) = _LoginState;
 }

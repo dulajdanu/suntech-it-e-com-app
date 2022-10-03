@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:suntech_it_e_com_app/core/errors/exceptions/exceptions.dart';
 import 'package:suntech_it_e_com_app/core/errors/failures/failure.dart';
+import 'package:suntech_it_e_com_app/core/models/user/user_model.dart';
 import 'package:suntech_it_e_com_app/features/auth/auth_form_models/password/password.dart';
 import 'package:suntech_it_e_com_app/features/auth/auth_form_models/email/email.dart';
 import 'package:suntech_it_e_com_app/core/type_defs/type_defs.dart';
@@ -13,11 +14,11 @@ class LoginRepsitoryImpl implements LoginRepository {
   LoginRepsitoryImpl({required LoginDatasource loginDatasource})
       : _loginDatasource = loginDatasource;
   @override
-  RvfEither<ResponseModel> signInUsingEmailPassword(
-      Email email, Password password) async {
+  RvfEither<Tuple2<ResponseModel, User>> signInUsingEmailPassword(
+      Email email, Password password, bool? rememberUser) async {
     try {
-      final result =
-          await _loginDatasource.signInUsingEmailPassword(email, password);
+      final result = await _loginDatasource.signInUsingEmailPassword(
+          email, password, rememberUser);
 
       return right(result);
     } on LoginException catch (e) {

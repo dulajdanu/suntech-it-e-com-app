@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:suntech_it_e_com_app/core/models/response_model/response_model.dart';
+import 'package:suntech_it_e_com_app/core/models/user/user_model.dart';
 import 'package:suntech_it_e_com_app/features/auth/auth_form_models/auth_form_models.dart';
 import 'package:suntech_it_e_com_app/features/auth/login/data/repositories/login_repository.dart';
 
@@ -32,7 +33,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         //todo add the auth type when logging using social media
         // emit(state.copyWith(authType: AuthType.emailPassword));
         final result = await _loginRepository.signInUsingEmailPassword(
-            state.email, state.password);
+            state.email, state.password, state.rememberUser);
 
         result.fold(
           (l) {
@@ -42,11 +43,12 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
               submissionFailureMessage: l.message,
             ));
           },
-          (r) {
+          (tuple2) {
             //emit the success state
             emit(state.copyWith(
               loginFormStatus: FormzStatus.submissionSuccess,
-              responseModel: r,
+              responseModel: tuple2.value1,
+              user: tuple2.value2,
             ));
           },
         );

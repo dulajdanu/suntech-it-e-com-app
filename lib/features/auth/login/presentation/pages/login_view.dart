@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:formz/formz.dart';
 import 'package:suntech_it_e_com_app/app/bloc/app_bloc.dart';
 import 'package:suntech_it_e_com_app/core/constants/app_constants.dart';
+import 'package:suntech_it_e_com_app/core/errors/exceptions/error_messages.dart';
 import 'package:suntech_it_e_com_app/core/widgets/custom_widgets.dart';
 import 'package:suntech_it_e_com_app/features/auth/login/bloc/login_bloc.dart';
 import 'package:suntech_it_e_com_app/features/auth/login/presentation/widgets/login_bloc_builder.dart';
@@ -25,8 +26,26 @@ class LoginView extends StatelessWidget {
           listenWhen: (previous, current) =>
               previous.loginFormStatus != current.loginFormStatus,
           listener: (context, state) {
-            if (state.loginFormStatus == FormzStatus.submissionSuccess) {
-              context.addAppEvent(const AppEvent.getToken());
+            if (state.loginFormStatus == FormzStatus.submissionSuccess &&
+                state.user != null) {
+              ScaffoldMessenger.of(context)
+                ..hideCurrentSnackBar()
+                ..showSnackBar(
+                  SnackBar(
+                    content: Text(state.responseModel?.message ??
+                        ErrorMessages.unexpectedErrorMessage),
+                  ),
+                );
+              context.addAppEvent(AppEvent.authStatusChanged(state.user!));
+            } else if (state.loginFormStatus == FormzStatus.submissionFailure) {
+              ScaffoldMessenger.of(context)
+                ..hideCurrentSnackBar()
+                ..showSnackBar(
+                  SnackBar(
+                    content: Text(state.submissionFailureMessage ??
+                        ErrorMessages.unexpectedErrorMessage),
+                  ),
+                );
             }
           },
         ),

@@ -632,6 +632,9 @@ mixin _$LoginState {
   ///response for the request
   ResponseModel? get responseModel => throw _privateConstructorUsedError;
 
+  ///User model which is returned after successfully signining in
+  User? get user => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $LoginStateCopyWith<LoginState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -648,9 +651,11 @@ abstract class $LoginStateCopyWith<$Res> {
       FormzStatus loginFormStatus,
       bool rememberUser,
       String? submissionFailureMessage,
-      ResponseModel? responseModel});
+      ResponseModel? responseModel,
+      User? user});
 
   $ResponseModelCopyWith<$Res>? get responseModel;
+  $UserCopyWith<$Res>? get user;
 }
 
 /// @nodoc
@@ -669,6 +674,7 @@ class _$LoginStateCopyWithImpl<$Res> implements $LoginStateCopyWith<$Res> {
     Object? rememberUser = freezed,
     Object? submissionFailureMessage = freezed,
     Object? responseModel = freezed,
+    Object? user = freezed,
   }) {
     return _then(_value.copyWith(
       email: email == freezed
@@ -695,6 +701,10 @@ class _$LoginStateCopyWithImpl<$Res> implements $LoginStateCopyWith<$Res> {
           ? _value.responseModel
           : responseModel // ignore: cast_nullable_to_non_nullable
               as ResponseModel?,
+      user: user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User?,
     ));
   }
 
@@ -706,6 +716,17 @@ class _$LoginStateCopyWithImpl<$Res> implements $LoginStateCopyWith<$Res> {
 
     return $ResponseModelCopyWith<$Res>(_value.responseModel!, (value) {
       return _then(_value.copyWith(responseModel: value));
+    });
+  }
+
+  @override
+  $UserCopyWith<$Res>? get user {
+    if (_value.user == null) {
+      return null;
+    }
+
+    return $UserCopyWith<$Res>(_value.user!, (value) {
+      return _then(_value.copyWith(user: value));
     });
   }
 }
@@ -723,10 +744,13 @@ abstract class _$$_LoginStateCopyWith<$Res>
       FormzStatus loginFormStatus,
       bool rememberUser,
       String? submissionFailureMessage,
-      ResponseModel? responseModel});
+      ResponseModel? responseModel,
+      User? user});
 
   @override
   $ResponseModelCopyWith<$Res>? get responseModel;
+  @override
+  $UserCopyWith<$Res>? get user;
 }
 
 /// @nodoc
@@ -747,6 +771,7 @@ class __$$_LoginStateCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res>
     Object? rememberUser = freezed,
     Object? submissionFailureMessage = freezed,
     Object? responseModel = freezed,
+    Object? user = freezed,
   }) {
     return _then(_$_LoginState(
       email: email == freezed
@@ -773,6 +798,10 @@ class __$$_LoginStateCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res>
           ? _value.responseModel
           : responseModel // ignore: cast_nullable_to_non_nullable
               as ResponseModel?,
+      user: user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User?,
     ));
   }
 }
@@ -786,7 +815,8 @@ class _$_LoginState implements _LoginState {
       this.loginFormStatus = FormzStatus.pure,
       this.rememberUser = false,
       this.submissionFailureMessage,
-      this.responseModel});
+      this.responseModel,
+      this.user});
 
   ///email of the user
   @override
@@ -816,9 +846,13 @@ class _$_LoginState implements _LoginState {
   @override
   final ResponseModel? responseModel;
 
+  ///User model which is returned after successfully signining in
+  @override
+  final User? user;
+
   @override
   String toString() {
-    return 'LoginState(email: $email, password: $password, loginFormStatus: $loginFormStatus, rememberUser: $rememberUser, submissionFailureMessage: $submissionFailureMessage, responseModel: $responseModel)';
+    return 'LoginState(email: $email, password: $password, loginFormStatus: $loginFormStatus, rememberUser: $rememberUser, submissionFailureMessage: $submissionFailureMessage, responseModel: $responseModel, user: $user)';
   }
 
   @override
@@ -835,7 +869,8 @@ class _$_LoginState implements _LoginState {
             const DeepCollectionEquality().equals(
                 other.submissionFailureMessage, submissionFailureMessage) &&
             const DeepCollectionEquality()
-                .equals(other.responseModel, responseModel));
+                .equals(other.responseModel, responseModel) &&
+            const DeepCollectionEquality().equals(other.user, user));
   }
 
   @override
@@ -846,7 +881,8 @@ class _$_LoginState implements _LoginState {
       const DeepCollectionEquality().hash(loginFormStatus),
       const DeepCollectionEquality().hash(rememberUser),
       const DeepCollectionEquality().hash(submissionFailureMessage),
-      const DeepCollectionEquality().hash(responseModel));
+      const DeepCollectionEquality().hash(responseModel),
+      const DeepCollectionEquality().hash(user));
 
   @JsonKey(ignore: true)
   @override
@@ -861,7 +897,8 @@ abstract class _LoginState implements LoginState {
       final FormzStatus loginFormStatus,
       final bool rememberUser,
       final String? submissionFailureMessage,
-      final ResponseModel? responseModel}) = _$_LoginState;
+      final ResponseModel? responseModel,
+      final User? user}) = _$_LoginState;
 
   @override
 
@@ -887,6 +924,10 @@ abstract class _LoginState implements LoginState {
 
   ///response for the request
   ResponseModel? get responseModel;
+  @override
+
+  ///User model which is returned after successfully signining in
+  User? get user;
   @override
   @JsonKey(ignore: true)
   _$$_LoginStateCopyWith<_$_LoginState> get copyWith =>

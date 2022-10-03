@@ -18,11 +18,16 @@ class Name extends FormzInput<String, NameValidationError> {
       );
     }
 
-    if (!isAlpha(trimmedValue)) {
+    final names = trimmedValue.split(" ");
+
+    final wrongInputs = names.where((element) => !isAlpha(element));
+
+    if (wrongInputs.isNotEmpty) {
       return _getError(
         ValidationErrors.nameInvalidChars,
       );
     }
+
     return null;
   }
 }
