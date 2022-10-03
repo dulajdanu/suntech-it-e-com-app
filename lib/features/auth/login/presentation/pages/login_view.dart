@@ -19,14 +19,26 @@ class LoginView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<LoginBloc, LoginState>(
-      listenWhen: (previous, current) =>
-          previous.loginFormStatus != current.loginFormStatus,
-      listener: (context, state) {
-        if (state.loginFormStatus == FormzStatus.submissionSuccess) {
-          context.addAppEvent(const AppEvent.getToken());
-        }
-      },
+    return MultiBlocListener(
+      listeners: [
+        BlocListener<LoginBloc, LoginState>(
+          listenWhen: (previous, current) =>
+              previous.loginFormStatus != current.loginFormStatus,
+          listener: (context, state) {
+            if (state.loginFormStatus == FormzStatus.submissionSuccess) {
+              context.addAppEvent(const AppEvent.getToken());
+            }
+          },
+        ),
+        BlocListener<AppBloc, AppState>(
+          listenWhen: (previous, current) => previous.status != current.status,
+          listener: (context, state) {
+            if (state.status == AppStatus.authenticated) {
+              Navigator.pop(context);
+            }
+          },
+        ),
+      ],
       child: AppBackgroundCustom(
         bodyWidget: SingleChildScrollView(
           child: Column(

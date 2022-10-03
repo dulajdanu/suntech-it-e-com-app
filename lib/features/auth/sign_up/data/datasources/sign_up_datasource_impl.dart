@@ -1,9 +1,9 @@
 import 'dart:convert';
 
-import 'package:hive/hive.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:logger/logger.dart';
+import 'package:suntech_it_e_com_app/core/errors/exceptions/error_messages.dart';
 import 'package:suntech_it_e_com_app/core/errors/exceptions/exceptions.dart';
-import 'package:suntech_it_e_com_app/core/local_storage/box_names.dart';
 import 'package:suntech_it_e_com_app/core/models/response_model/response_model.dart';
 import 'package:suntech_it_e_com_app/core/parsers/custom_jwt_parser.dart';
 import 'package:suntech_it_e_com_app/features/auth/auth_form_models/password/password.dart';
@@ -14,6 +14,10 @@ import 'package:suntech_it_e_com_app/features/auth/sign_up/data/datasources/sign
 import 'package:http/http.dart' as http;
 
 class SignUpDatasourceImpl implements SignUpDatasource {
+  final FlutterSecureStorage _flutterSecureStorage;
+
+  SignUpDatasourceImpl({required FlutterSecureStorage flutterSecureStorage})
+      : _flutterSecureStorage = flutterSecureStorage;
   @override
   Rvf<ResponseModel> signUpNewUser(
       Name fullName, Email email, Password password) async {
@@ -32,11 +36,16 @@ class SignUpDatasourceImpl implements SignUpDatasource {
         final token = jsonResponse['body']['token'];
         // Logger().wtf(token);
 
-        Logger().wtf(parseJwt(token));
+        if (token != null) {
+          Logger().wtf(parseJwt(token));
 
-        Hive.box(BoxNames.userData).put('token', token);
+          _flutterSecureStorage.write(key: 'token', value: token);
 
-        return ResponseModel.fromJson(jsonResponse);
+          return ResponseModel.fromJson(jsonResponse);
+        } else {
+          throw const Exceptions.signUpException(
+              ErrorMessages.unexpectedErrorMessage);
+        }
       } else {
         Logger().w(jsonResponse);
         throw Exceptions.signUpException(
@@ -46,8 +55,7 @@ class SignUpDatasourceImpl implements SignUpDatasource {
     } on SignUpException catch (e) {
       throw Exceptions.signUpException(e.message);
     } catch (e) {
-      throw const Exceptions.signUpException(
-          "An error occurred while creating new user");
+      throw const Exceptions.signUpException(ErrorMessages.signUpErrorMessage);
     }
   }
 }

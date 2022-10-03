@@ -17,7 +17,9 @@ void setupLocator() {
 
   ///Sign up
   //data source
-  registerLazySingleton<SignUpDatasource>(SignUpDatasourceImpl());
+  registerLazySingleton<SignUpDatasource>(SignUpDatasourceImpl(
+    flutterSecureStorage: serviceLocator<FlutterSecureStorage>(),
+  ));
   //repo
   registerLazySingleton<SignUpRepository>(SignUpRepsitoryImpl(
     signUpDatasource: serviceLocator(),

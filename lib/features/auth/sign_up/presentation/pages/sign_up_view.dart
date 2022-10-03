@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:formz/formz.dart';
+import 'package:suntech_it_e_com_app/app/bloc/app_bloc.dart';
 import 'package:suntech_it_e_com_app/core/constants/app_constants.dart';
 import 'package:suntech_it_e_com_app/core/widgets/custom_widgets.dart';
 import 'package:suntech_it_e_com_app/features/auth/login/presentation/pages/login_page.dart';
@@ -18,37 +19,47 @@ class SignUpView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<SignUpBloc, SignUpState>(
-      listenWhen: (previous, current) =>
-          previous.signupFormStatus != current.signupFormStatus,
-      listener: (context, state) {
-        if (state.signupFormStatus == FormzStatus.submissionSuccess) {
-          ScaffoldMessenger.of(context)
-            ..hideCurrentSnackBar()
-            ..showSnackBar(
-              SnackBar(
-                content:
-                    Text(state.responseModel?.title ?? "User account created"),
-              ),
-            );
+    return MultiBlocListener(
+      listeners: [
+        BlocListener<SignUpBloc, SignUpState>(
+          listenWhen: (previous, current) =>
+              previous.signupFormStatus != current.signupFormStatus,
+          listener: (context, state) {
+            if (state.signupFormStatus == FormzStatus.submissionSuccess) {
+              ScaffoldMessenger.of(context)
+                ..hideCurrentSnackBar()
+                ..showSnackBar(
+                  SnackBar(
+                    content: Text(
+                        state.responseModel?.title ?? "User account created"),
+                  ),
+                );
 
-          Navigator.pop(context);
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const LoginPage(),
-              ));
-        } else if (state.signupFormStatus == FormzStatus.submissionFailure) {
-          ScaffoldMessenger.of(context)
-            ..hideCurrentSnackBar()
-            ..showSnackBar(
-              SnackBar(
-                content: Text(state.submissionFailureMessage ??
-                    "Error occurred while creating account"),
-              ),
-            );
-        }
-      },
+              // Navigator.pop(context);
+
+              context.addAppEvent(const AppEvent.getToken());
+            } else if (state.signupFormStatus ==
+                FormzStatus.submissionFailure) {
+              ScaffoldMessenger.of(context)
+                ..hideCurrentSnackBar()
+                ..showSnackBar(
+                  SnackBar(
+                    content: Text(state.submissionFailureMessage ??
+                        "Error occurred while creating account"),
+                  ),
+                );
+            }
+          },
+        ),
+        BlocListener<AppBloc, AppState>(
+          listenWhen: (previous, current) => previous.status != current.status,
+          listener: (context, state) {
+            if (state.status == AppStatus.authenticated) {
+              Navigator.pop(context);
+            }
+          },
+        ),
+      ],
       child: AppBackgroundCustom(
           bodyWidget: Container(
         padding: EdgeInsets.symmetric(
