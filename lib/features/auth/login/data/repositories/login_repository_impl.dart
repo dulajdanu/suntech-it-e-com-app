@@ -1,3 +1,27 @@
+import 'package:dartz/dartz.dart';
+import 'package:suntech_it_e_com_app/core/errors/exceptions/exceptions.dart';
+import 'package:suntech_it_e_com_app/core/errors/failures/failure.dart';
+import 'package:suntech_it_e_com_app/features/auth/auth_form_models/password/password.dart';
+import 'package:suntech_it_e_com_app/features/auth/auth_form_models/email/email.dart';
+import 'package:suntech_it_e_com_app/core/type_defs/type_defs.dart';
+import 'package:suntech_it_e_com_app/core/models/response_model.dart';
+import 'package:suntech_it_e_com_app/features/auth/login/data/datasources/login_datasource.dart';
 import 'package:suntech_it_e_com_app/features/auth/login/data/repositories/login_repository.dart';
 
-class LoginRepsitoryImpl implements LoginRepository {}
+class LoginRepsitoryImpl implements LoginRepository {
+  final LoginDatasource _loginDatasource;
+  LoginRepsitoryImpl({required LoginDatasource loginDatasource})
+      : _loginDatasource = loginDatasource;
+  @override
+  RvfEither<ResponseModel> signInUsingEmailPassword(
+      Email email, Password password) async {
+    try {
+      final result =
+          await _loginDatasource.signInUsingEmailPassword(email, password);
+
+      return right(result);
+    } on SignUpException catch (e) {
+      return left(Failure.signUp(e.message));
+    }
+  }
+}

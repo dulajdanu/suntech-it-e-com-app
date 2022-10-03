@@ -629,6 +629,9 @@ mixin _$LoginState {
   ///The error message for invalid input
   String? get submissionFailureMessage => throw _privateConstructorUsedError;
 
+  ///response for the request
+  ResponseModel? get responseModel => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $LoginStateCopyWith<LoginState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -644,7 +647,10 @@ abstract class $LoginStateCopyWith<$Res> {
       Password password,
       FormzStatus loginFormStatus,
       bool rememberUser,
-      String? submissionFailureMessage});
+      String? submissionFailureMessage,
+      ResponseModel? responseModel});
+
+  $ResponseModelCopyWith<$Res>? get responseModel;
 }
 
 /// @nodoc
@@ -662,6 +668,7 @@ class _$LoginStateCopyWithImpl<$Res> implements $LoginStateCopyWith<$Res> {
     Object? loginFormStatus = freezed,
     Object? rememberUser = freezed,
     Object? submissionFailureMessage = freezed,
+    Object? responseModel = freezed,
   }) {
     return _then(_value.copyWith(
       email: email == freezed
@@ -684,7 +691,22 @@ class _$LoginStateCopyWithImpl<$Res> implements $LoginStateCopyWith<$Res> {
           ? _value.submissionFailureMessage
           : submissionFailureMessage // ignore: cast_nullable_to_non_nullable
               as String?,
+      responseModel: responseModel == freezed
+          ? _value.responseModel
+          : responseModel // ignore: cast_nullable_to_non_nullable
+              as ResponseModel?,
     ));
+  }
+
+  @override
+  $ResponseModelCopyWith<$Res>? get responseModel {
+    if (_value.responseModel == null) {
+      return null;
+    }
+
+    return $ResponseModelCopyWith<$Res>(_value.responseModel!, (value) {
+      return _then(_value.copyWith(responseModel: value));
+    });
   }
 }
 
@@ -700,7 +722,11 @@ abstract class _$$_LoginStateCopyWith<$Res>
       Password password,
       FormzStatus loginFormStatus,
       bool rememberUser,
-      String? submissionFailureMessage});
+      String? submissionFailureMessage,
+      ResponseModel? responseModel});
+
+  @override
+  $ResponseModelCopyWith<$Res>? get responseModel;
 }
 
 /// @nodoc
@@ -720,6 +746,7 @@ class __$$_LoginStateCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res>
     Object? loginFormStatus = freezed,
     Object? rememberUser = freezed,
     Object? submissionFailureMessage = freezed,
+    Object? responseModel = freezed,
   }) {
     return _then(_$_LoginState(
       email: email == freezed
@@ -742,6 +769,10 @@ class __$$_LoginStateCopyWithImpl<$Res> extends _$LoginStateCopyWithImpl<$Res>
           ? _value.submissionFailureMessage
           : submissionFailureMessage // ignore: cast_nullable_to_non_nullable
               as String?,
+      responseModel: responseModel == freezed
+          ? _value.responseModel
+          : responseModel // ignore: cast_nullable_to_non_nullable
+              as ResponseModel?,
     ));
   }
 }
@@ -754,7 +785,8 @@ class _$_LoginState implements _LoginState {
       this.password = const Password.pure(),
       this.loginFormStatus = FormzStatus.pure,
       this.rememberUser = false,
-      this.submissionFailureMessage});
+      this.submissionFailureMessage,
+      this.responseModel});
 
   ///email of the user
   @override
@@ -780,9 +812,13 @@ class _$_LoginState implements _LoginState {
   @override
   final String? submissionFailureMessage;
 
+  ///response for the request
+  @override
+  final ResponseModel? responseModel;
+
   @override
   String toString() {
-    return 'LoginState(email: $email, password: $password, loginFormStatus: $loginFormStatus, rememberUser: $rememberUser, submissionFailureMessage: $submissionFailureMessage)';
+    return 'LoginState(email: $email, password: $password, loginFormStatus: $loginFormStatus, rememberUser: $rememberUser, submissionFailureMessage: $submissionFailureMessage, responseModel: $responseModel)';
   }
 
   @override
@@ -797,7 +833,9 @@ class _$_LoginState implements _LoginState {
             const DeepCollectionEquality()
                 .equals(other.rememberUser, rememberUser) &&
             const DeepCollectionEquality().equals(
-                other.submissionFailureMessage, submissionFailureMessage));
+                other.submissionFailureMessage, submissionFailureMessage) &&
+            const DeepCollectionEquality()
+                .equals(other.responseModel, responseModel));
   }
 
   @override
@@ -807,7 +845,8 @@ class _$_LoginState implements _LoginState {
       const DeepCollectionEquality().hash(password),
       const DeepCollectionEquality().hash(loginFormStatus),
       const DeepCollectionEquality().hash(rememberUser),
-      const DeepCollectionEquality().hash(submissionFailureMessage));
+      const DeepCollectionEquality().hash(submissionFailureMessage),
+      const DeepCollectionEquality().hash(responseModel));
 
   @JsonKey(ignore: true)
   @override
@@ -821,7 +860,8 @@ abstract class _LoginState implements LoginState {
       final Password password,
       final FormzStatus loginFormStatus,
       final bool rememberUser,
-      final String? submissionFailureMessage}) = _$_LoginState;
+      final String? submissionFailureMessage,
+      final ResponseModel? responseModel}) = _$_LoginState;
 
   @override
 
@@ -843,6 +883,10 @@ abstract class _LoginState implements LoginState {
 
   ///The error message for invalid input
   String? get submissionFailureMessage;
+  @override
+
+  ///response for the request
+  ResponseModel? get responseModel;
   @override
   @JsonKey(ignore: true)
   _$$_LoginStateCopyWith<_$_LoginState> get copyWith =>

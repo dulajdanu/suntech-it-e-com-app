@@ -27,9 +27,17 @@ class SignUpView extends StatelessWidget {
             ..hideCurrentSnackBar()
             ..showSnackBar(
               SnackBar(
-                content: Text(state.responseModel?.title ?? "User acc created"),
+                content:
+                    Text(state.responseModel?.title ?? "User account created"),
               ),
             );
+
+          Navigator.pop(context);
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const LoginPage(),
+              ));
         } else if (state.signupFormStatus == FormzStatus.submissionFailure) {
           ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()

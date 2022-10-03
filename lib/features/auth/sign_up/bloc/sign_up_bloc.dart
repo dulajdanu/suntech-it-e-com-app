@@ -41,6 +41,8 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
           ));
         }
       }, submit: () async {
+        //todo add the auth type when logging using social media
+        emit(state.copyWith(authType: AuthType.emailPassword));
         final result = await _signUpRepository.signUpNewUser(
             state.fullName, state.email, state.password);
 

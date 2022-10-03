@@ -29,5 +29,10 @@ class SignUpState with _$SignUpState {
 
     ///response for the request
     ResponseModel? responseModel,
+
+    ///How the user is going to authenticate
+    AuthType? authType,
   }) = _SignUpState;
 }
+
+enum AuthType { emailPassword, socialMedia }

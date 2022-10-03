@@ -2,16 +2,21 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:suntech_it_e_com_app/core/models/response_model.dart';
 import 'package:suntech_it_e_com_app/features/auth/auth_form_models/auth_form_models.dart';
+import 'package:suntech_it_e_com_app/features/auth/login/data/repositories/login_repository.dart';
 
 part 'login_event.dart';
 part 'login_state.dart';
 part 'login_bloc.freezed.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
-  LoginBloc() : super(const LoginState()) {
+  final LoginRepository _loginRepository;
+  LoginBloc({required LoginRepository loginRepository})
+      : _loginRepository = loginRepository,
+        super(const LoginState()) {
     on<LoginEvent>((event, emit) async {
-      event.whenOrNull(emailChanged: (value) {
+      await event.whenOrNull(emailChanged: (value) {
         final email = Email.dirty(value);
         emit(validateLoginFormStatus(state.copyWith(email: email)));
       }, passwordChanged: (value) {
@@ -22,6 +27,28 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
           validateLoginFormStatus(
             state.copyWith(rememberUser: !state.rememberUser),
           ),
+        );
+      }, submit: () async {
+        //todo add the auth type when logging using social media
+        // emit(state.copyWith(authType: AuthType.emailPassword));
+        final result = await _loginRepository.signInUsingEmailPassword(
+            state.email, state.password);
+
+        result.fold(
+          (l) {
+            //emit the error state
+            emit(state.copyWith(
+              loginFormStatus: FormzStatus.submissionFailure,
+              submissionFailureMessage: l.message,
+            ));
+          },
+          (r) {
+            //emit the success state
+            emit(state.copyWith(
+              loginFormStatus: FormzStatus.submissionSuccess,
+              responseModel: r,
+            ));
+          },
         );
       });
     });

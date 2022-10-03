@@ -17,5 +17,8 @@ class LoginState with _$LoginState {
 
     ///The error message for invalid input
     String? submissionFailureMessage,
+
+    ///response for the request
+    ResponseModel? responseModel,
   }) = _LoginState;
 }

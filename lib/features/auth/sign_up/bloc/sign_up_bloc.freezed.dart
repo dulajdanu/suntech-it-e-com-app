@@ -1089,6 +1089,9 @@ mixin _$SignUpState {
   ///response for the request
   ResponseModel? get responseModel => throw _privateConstructorUsedError;
 
+  ///How the user is going to authenticate
+  AuthType? get authType => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $SignUpStateCopyWith<SignUpState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1108,7 +1111,8 @@ abstract class $SignUpStateCopyWith<$Res> {
       bool hidePassword,
       bool hideConfirmPassword,
       String? submissionFailureMessage,
-      ResponseModel? responseModel});
+      ResponseModel? responseModel,
+      AuthType? authType});
 
   $ResponseModelCopyWith<$Res>? get responseModel;
 }
@@ -1132,6 +1136,7 @@ class _$SignUpStateCopyWithImpl<$Res> implements $SignUpStateCopyWith<$Res> {
     Object? hideConfirmPassword = freezed,
     Object? submissionFailureMessage = freezed,
     Object? responseModel = freezed,
+    Object? authType = freezed,
   }) {
     return _then(_value.copyWith(
       fullName: fullName == freezed
@@ -1170,6 +1175,10 @@ class _$SignUpStateCopyWithImpl<$Res> implements $SignUpStateCopyWith<$Res> {
           ? _value.responseModel
           : responseModel // ignore: cast_nullable_to_non_nullable
               as ResponseModel?,
+      authType: authType == freezed
+          ? _value.authType
+          : authType // ignore: cast_nullable_to_non_nullable
+              as AuthType?,
     ));
   }
 
@@ -1201,7 +1210,8 @@ abstract class _$$_SignUpStateCopyWith<$Res>
       bool hidePassword,
       bool hideConfirmPassword,
       String? submissionFailureMessage,
-      ResponseModel? responseModel});
+      ResponseModel? responseModel,
+      AuthType? authType});
 
   @override
   $ResponseModelCopyWith<$Res>? get responseModel;
@@ -1228,6 +1238,7 @@ class __$$_SignUpStateCopyWithImpl<$Res> extends _$SignUpStateCopyWithImpl<$Res>
     Object? hideConfirmPassword = freezed,
     Object? submissionFailureMessage = freezed,
     Object? responseModel = freezed,
+    Object? authType = freezed,
   }) {
     return _then(_$_SignUpState(
       fullName: fullName == freezed
@@ -1266,6 +1277,10 @@ class __$$_SignUpStateCopyWithImpl<$Res> extends _$SignUpStateCopyWithImpl<$Res>
           ? _value.responseModel
           : responseModel // ignore: cast_nullable_to_non_nullable
               as ResponseModel?,
+      authType: authType == freezed
+          ? _value.authType
+          : authType // ignore: cast_nullable_to_non_nullable
+              as AuthType?,
     ));
   }
 }
@@ -1282,7 +1297,8 @@ class _$_SignUpState implements _SignUpState {
       this.hidePassword = true,
       this.hideConfirmPassword = true,
       this.submissionFailureMessage,
-      this.responseModel});
+      this.responseModel,
+      this.authType});
 
   ///full name of the user
   @override
@@ -1327,9 +1343,13 @@ class _$_SignUpState implements _SignUpState {
   @override
   final ResponseModel? responseModel;
 
+  ///How the user is going to authenticate
+  @override
+  final AuthType? authType;
+
   @override
   String toString() {
-    return 'SignUpState(fullName: $fullName, email: $email, password: $password, confirmPassword: $confirmPassword, signupFormStatus: $signupFormStatus, hidePassword: $hidePassword, hideConfirmPassword: $hideConfirmPassword, submissionFailureMessage: $submissionFailureMessage, responseModel: $responseModel)';
+    return 'SignUpState(fullName: $fullName, email: $email, password: $password, confirmPassword: $confirmPassword, signupFormStatus: $signupFormStatus, hidePassword: $hidePassword, hideConfirmPassword: $hideConfirmPassword, submissionFailureMessage: $submissionFailureMessage, responseModel: $responseModel, authType: $authType)';
   }
 
   @override
@@ -1351,7 +1371,8 @@ class _$_SignUpState implements _SignUpState {
             const DeepCollectionEquality().equals(
                 other.submissionFailureMessage, submissionFailureMessage) &&
             const DeepCollectionEquality()
-                .equals(other.responseModel, responseModel));
+                .equals(other.responseModel, responseModel) &&
+            const DeepCollectionEquality().equals(other.authType, authType));
   }
 
   @override
@@ -1365,7 +1386,8 @@ class _$_SignUpState implements _SignUpState {
       const DeepCollectionEquality().hash(hidePassword),
       const DeepCollectionEquality().hash(hideConfirmPassword),
       const DeepCollectionEquality().hash(submissionFailureMessage),
-      const DeepCollectionEquality().hash(responseModel));
+      const DeepCollectionEquality().hash(responseModel),
+      const DeepCollectionEquality().hash(authType));
 
   @JsonKey(ignore: true)
   @override
@@ -1383,7 +1405,8 @@ abstract class _SignUpState implements SignUpState {
       final bool hidePassword,
       final bool hideConfirmPassword,
       final String? submissionFailureMessage,
-      final ResponseModel? responseModel}) = _$_SignUpState;
+      final ResponseModel? responseModel,
+      final AuthType? authType}) = _$_SignUpState;
 
   @override
 
@@ -1421,6 +1444,10 @@ abstract class _SignUpState implements SignUpState {
 
   ///response for the request
   ResponseModel? get responseModel;
+  @override
+
+  ///How the user is going to authenticate
+  AuthType? get authType;
   @override
   @JsonKey(ignore: true)
   _$$_SignUpStateCopyWith<_$_SignUpState> get copyWith =>
