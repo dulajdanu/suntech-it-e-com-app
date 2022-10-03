@@ -4,7 +4,7 @@ import 'package:hive/hive.dart';
 import 'package:logger/logger.dart';
 import 'package:suntech_it_e_com_app/core/errors/exceptions/exceptions.dart';
 import 'package:suntech_it_e_com_app/core/local_storage/box_names.dart';
-import 'package:suntech_it_e_com_app/core/models/response_model.dart';
+import 'package:suntech_it_e_com_app/core/models/response_model/response_model.dart';
 import 'package:suntech_it_e_com_app/core/parsers/custom_jwt_parser.dart';
 import 'package:suntech_it_e_com_app/features/auth/auth_form_models/password/password.dart';
 import 'package:suntech_it_e_com_app/features/auth/auth_form_models/name/name.dart';

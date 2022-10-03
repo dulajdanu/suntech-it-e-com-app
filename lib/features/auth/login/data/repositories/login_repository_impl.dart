@@ -4,7 +4,7 @@ import 'package:suntech_it_e_com_app/core/errors/failures/failure.dart';
 import 'package:suntech_it_e_com_app/features/auth/auth_form_models/password/password.dart';
 import 'package:suntech_it_e_com_app/features/auth/auth_form_models/email/email.dart';
 import 'package:suntech_it_e_com_app/core/type_defs/type_defs.dart';
-import 'package:suntech_it_e_com_app/core/models/response_model.dart';
+import 'package:suntech_it_e_com_app/core/models/response_model/response_model.dart';
 import 'package:suntech_it_e_com_app/features/auth/login/data/datasources/login_datasource.dart';
 import 'package:suntech_it_e_com_app/features/auth/login/data/repositories/login_repository.dart';
 
@@ -20,8 +20,8 @@ class LoginRepsitoryImpl implements LoginRepository {
           await _loginDatasource.signInUsingEmailPassword(email, password);
 
       return right(result);
-    } on SignUpException catch (e) {
-      return left(Failure.signUp(e.message));
+    } on LoginException catch (e) {
+      return left(Failure.login(e.message));
     }
   }
 }

@@ -3,9 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:suntech_it_e_com_app/app/presentation/app_view.dart';
 import 'package:suntech_it_e_com_app/core/local_storage/open_hive_boxes.dart';
 import 'package:suntech_it_e_com_app/core/service_locators/service_locator.dart';
-import 'package:suntech_it_e_com_app/features/welcome/presentation/pages/welcome_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.blue,
             textTheme: GoogleFonts.barlowTextTheme(),
           ),
-          home: const WelcomePage(),
+          home: const App(),
         );
       },
     );

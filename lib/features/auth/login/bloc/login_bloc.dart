@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:suntech_it_e_com_app/core/models/response_model.dart';
+import 'package:suntech_it_e_com_app/core/models/response_model/response_model.dart';
 import 'package:suntech_it_e_com_app/features/auth/auth_form_models/auth_form_models.dart';
 import 'package:suntech_it_e_com_app/features/auth/login/data/repositories/login_repository.dart';
 

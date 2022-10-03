@@ -12,6 +12,9 @@ import 'package:suntech_it_e_com_app/features/auth/sign_up/data/repositories/sig
 final serviceLocator = GetIt.instance;
 
 void setupLocator() {
+  ///Flutter secure storage
+  registerLazySingleton(const FlutterSecureStorage());
+
   ///Sign up
   //data source
   registerLazySingleton<SignUpDatasource>(SignUpDatasourceImpl());
@@ -22,14 +25,13 @@ void setupLocator() {
 
   ///Login
 
-  registerLazySingleton<LoginDatasource>(LoginDatasourceImpl());
+  registerLazySingleton<LoginDatasource>(LoginDatasourceImpl(
+    flutterSecureStorage: serviceLocator(),
+  ));
 
   registerLazySingleton<LoginRepository>(LoginRepsitoryImpl(
     loginDatasource: serviceLocator(),
   ));
-
-  ///Flutter secure storage
-  registerLazySingleton(const FlutterSecureStorage());
 }
 
 void registerLazySingleton<T extends Object>(T object) {
