@@ -58,6 +58,13 @@ class HomeView extends StatelessWidget {
             ),
           ),
         ),
+        SizedBox(
+          height: 28.h,
+        ),
+        Container(
+          color: Colors.red,
+          height: 189.h,
+        )
       ],
     );
   }

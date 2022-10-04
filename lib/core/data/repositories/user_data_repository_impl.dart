@@ -3,6 +3,8 @@ import 'package:suntech_it_e_com_app/core/data/datasources/user_data_datasource.
 import 'package:suntech_it_e_com_app/core/data/repositories/user_data_repository.dart';
 import 'package:suntech_it_e_com_app/core/errors/exceptions/exceptions.dart';
 import 'package:suntech_it_e_com_app/core/errors/failures/failure.dart';
+import 'package:suntech_it_e_com_app/features/auth/auth_form_models/name/name.dart';
+import 'package:suntech_it_e_com_app/features/auth/auth_form_models/email/email.dart';
 import 'package:suntech_it_e_com_app/features/auth/auth_form_models/password/password.dart';
 import 'package:suntech_it_e_com_app/core/type_defs/type_defs.dart';
 
@@ -14,6 +16,17 @@ class UserDataRepositoryImpl implements UserDataRepository {
   RvfEitherUnit updatePassword(Password password, String token) async {
     try {
       final result = await _userDataDataSource.updatePassword(password, token);
+
+      return right(result);
+    } on UpdateProfileException catch (e) {
+      return left(Failure.updateProfile(e.message));
+    }
+  }
+
+  @override
+  RvfEitherUnit updateProfile(Name fullName, Email email) async {
+    try {
+      final result = await _userDataDataSource.updateProfile(fullName, email);
 
       return right(result);
     } on UpdateProfileException catch (e) {
