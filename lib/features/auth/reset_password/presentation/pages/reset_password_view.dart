@@ -6,6 +6,7 @@ import 'package:suntech_it_e_com_app/core/constants/app_constants.dart';
 import 'package:suntech_it_e_com_app/core/errors/exceptions/error_messages.dart';
 import 'package:suntech_it_e_com_app/core/widgets/custom_widgets.dart';
 import 'package:suntech_it_e_com_app/features/auth/reset_password/cubit/reset_password_cubit.dart';
+import 'package:suntech_it_e_com_app/features/auth/reset_password/presentation/pages/verification_page.dart';
 import 'package:suntech_it_e_com_app/features/auth/reset_password/presentation/widgets/reset_password_button_widget.dart';
 import 'package:suntech_it_e_com_app/features/auth/reset_password/presentation/widgets/reset_password_email_input_widget.dart';
 
@@ -13,7 +14,7 @@ class ResetPasswordView extends StatelessWidget {
   const ResetPasswordView({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext contextM) {
     return BlocListener<ResetPasswordCubit, ResetPasswordState>(
       listenWhen: (previous, current) =>
           previous.formStatus != current.formStatus,
@@ -27,6 +28,15 @@ class ResetPasswordView extends StatelessWidget {
                 content: Text(state.responseModel!.message),
               ),
             );
+
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => BlocProvider.value(
+                  value: contextM.read<ResetPasswordCubit>(),
+                  child: const VerificationPage(),
+                ),
+              ));
         } else if (state.formStatus == FormzStatus.submissionFailure) {
           ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()

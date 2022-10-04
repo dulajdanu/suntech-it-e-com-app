@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:suntech_it_e_com_app/core/constants/app_constants.dart';
 import 'package:suntech_it_e_com_app/core/widgets/custom_widgets.dart';
+import 'package:suntech_it_e_com_app/features/auth/reset_password/cubit/reset_password_cubit.dart';
 import 'package:suntech_it_e_com_app/features/auth/reset_password/presentation/widgets/pin_input_widget.dart';
 import 'package:suntech_it_e_com_app/features/auth/widgets/auth_action_button_widget.dart';
 
@@ -23,14 +25,20 @@ class VerificationView extends StatelessWidget {
             marginBottom: 33.h,
             textStyle: AppConstants.headingTextStyle,
           ),
-          TextCustomWidget(
-            text: "We’ve send you the verification code on abc@email.com",
-            textStyle: const TextStyle(
-              fontSize: 15,
-              color: Colors.white,
-              fontWeight: FontWeight.w400,
-            ),
-            marginBottom: 56.12.h,
+          BlocBuilder<ResetPasswordCubit, ResetPasswordState>(
+            buildWhen: (previous, current) => previous.email != current.email,
+            builder: (context, state) {
+              return TextCustomWidget(
+                text:
+                    "We’ve send you the verification code on ${state.email.value}",
+                textStyle: const TextStyle(
+                  fontSize: 15,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w400,
+                ),
+                marginBottom: 56.12.h,
+              );
+            },
           ),
           SizedBox(
             height: 61.h,
