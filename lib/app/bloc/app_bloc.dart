@@ -31,9 +31,10 @@ class AppBloc extends Bloc<AppEvent, AppState> {
   FutureOr<void> _onAuthStatusChanged(
       _AuthStatusChanged event, Emitter<AppState> emit) {
     if (event.user.isNotEmpty) {
-      emit(const AppState(status: AppStatus.authenticated));
+      emit(AppState(status: AppStatus.authenticated, userModel: event.user));
     } else {
-      emit(const AppState(status: AppStatus.unauthenticated));
+      emit(const AppState(
+          status: AppStatus.unauthenticated, userModel: User.empty));
     }
   }
 

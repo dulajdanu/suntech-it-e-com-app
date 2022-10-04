@@ -1,25 +1,38 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:suntech_it_e_com_app/app/bloc/app_bloc.dart';
 import 'package:suntech_it_e_com_app/core/constants/app_constants.dart';
 import 'package:suntech_it_e_com_app/core/widgets/custom_widgets.dart';
+import 'package:suntech_it_e_com_app/features/home/presentation/pages/home_page.dart';
+import 'package:suntech_it_e_com_app/features/main_page/presentation/widgets/selected_icon_widget.dart';
+import 'package:suntech_it_e_com_app/features/user_profile/presentation/pages/user_profile_page.dart';
 
-class MainPage extends StatelessWidget {
+class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
 
   static Page page() => const MaterialPage<void>(child: MainPage());
 
   @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
+  int selectedIdx = 0;
+
+  final List<Widget> screens = [
+    const HomePage(),
+    const HomePage(),
+    const UserProfilePage(),
+    const UserProfilePage(),
+  ];
+
+  @override
   Widget build(BuildContext context) {
-    return AppBackgroundCustom(
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            context.addAppEvent(const AppEvent.logoutRequested());
-          },
-          tooltip: "Logout",
-          child: const Icon(Icons.snowing),
-        ),
+    return Theme(
+      data: ThemeData(
+        splashColor: Colors.transparent,
+        highlightColor: Colors.transparent,
+      ),
+      child: AppBackgroundCustom(
         appBar: AppBarCustom(
           leadingWidget: IconButton(
             onPressed: () {},
@@ -32,81 +45,56 @@ class MainPage extends StatelessWidget {
           ),
         ),
         bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Colors.green,
-          unselectedItemColor: Colors.orange,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          currentIndex: selectedIdx,
+          onTap: (index) {
+            setState(() {
+              selectedIdx = index;
+            });
+          },
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: 'Home',
+              backgroundColor: AppConstants.lightBlackColor,
+              activeIcon: SelectedIconWidget(
+                iconType: IconType.home,
+              ),
             ),
             BottomNavigationBarItem(
               icon: Icon(FontAwesomeIcons.heart),
-              label: 'Fav',
+              label: 'Favorites',
+              backgroundColor: AppConstants.lightBlackColor,
+              activeIcon: SelectedIconWidget(
+                iconType: IconType.fav,
+              ),
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.shopping_cart),
               label: 'Cart',
+              backgroundColor: AppConstants.lightBlackColor,
+              activeIcon: SelectedIconWidget(
+                iconType: IconType.cart,
+              ),
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person),
               label: 'Profile',
-            ),
-          ],
-          currentIndex: 0,
-          selectedItemColor: Colors.amber[800],
-          onTap: (index) {},
-        ),
-        bodyWidget: Column(
-          children: [
-            TextCustomWidget(
-              text: 'Discover Your Best ',
-              textStyle: AppConstants
-                  .headingTextStyle, //todo add the correct fontWeight here
-              marginLeft: AppConstants.homePageHorizontalMargin,
-            ),
-            SizedBox(
-              height: 23.h,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(
-                  horizontal: AppConstants.homePageHorizontalMargin),
-              child: Card(
-                elevation: 5,
-                color: const Color(0xff262626),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8.h)),
-                child: TextField(
-                  decoration: InputDecoration(
-                    prefixIcon: const Icon(
-                      Icons.search,
-                      color: Color(0xffACACAC),
-                    ),
-                    hintText: "Search Headphones",
-                    hintStyle: TextStyle(
-                      fontSize: 17.sp,
-                      fontWeight: FontWeight.w500,
-                      color: const Color(0xffACACAC),
-                    ),
-                    border: const OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.transparent,
-                      ),
-                    ),
-                    enabledBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.transparent,
-                      ),
-                    ),
-                    focusedBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.transparent,
-                      ),
-                    ),
-                  ),
-                ),
+              backgroundColor: AppConstants.lightBlackColor,
+              activeIcon: SelectedIconWidget(
+                iconType: IconType.profile,
               ),
             ),
           ],
-        ));
+        ),
+        bodyWidget: IndexedStack(
+          index: selectedIdx,
+          children: [
+            ...screens.map((e) => e).toList(),
+          ],
+        ),
+      ),
+    );
   }
 }

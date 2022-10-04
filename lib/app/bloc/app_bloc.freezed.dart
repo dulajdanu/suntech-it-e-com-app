@@ -451,6 +451,7 @@ abstract class _GetToken implements AppEvent {
 /// @nodoc
 mixin _$AppState {
   AppStatus get status => throw _privateConstructorUsedError;
+  User get userModel => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AppStateCopyWith<AppState> get copyWith =>
@@ -461,7 +462,9 @@ mixin _$AppState {
 abstract class $AppStateCopyWith<$Res> {
   factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) =
       _$AppStateCopyWithImpl<$Res>;
-  $Res call({AppStatus status});
+  $Res call({AppStatus status, User userModel});
+
+  $UserCopyWith<$Res> get userModel;
 }
 
 /// @nodoc
@@ -475,13 +478,25 @@ class _$AppStateCopyWithImpl<$Res> implements $AppStateCopyWith<$Res> {
   @override
   $Res call({
     Object? status = freezed,
+    Object? userModel = freezed,
   }) {
     return _then(_value.copyWith(
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as AppStatus,
+      userModel: userModel == freezed
+          ? _value.userModel
+          : userModel // ignore: cast_nullable_to_non_nullable
+              as User,
     ));
+  }
+
+  @override
+  $UserCopyWith<$Res> get userModel {
+    return $UserCopyWith<$Res>(_value.userModel, (value) {
+      return _then(_value.copyWith(userModel: value));
+    });
   }
 }
 
@@ -491,7 +506,10 @@ abstract class _$$_AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
           _$_AppState value, $Res Function(_$_AppState) then) =
       __$$_AppStateCopyWithImpl<$Res>;
   @override
-  $Res call({AppStatus status});
+  $Res call({AppStatus status, User userModel});
+
+  @override
+  $UserCopyWith<$Res> get userModel;
 }
 
 /// @nodoc
@@ -507,12 +525,17 @@ class __$$_AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? status = freezed,
+    Object? userModel = freezed,
   }) {
     return _then(_$_AppState(
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as AppStatus,
+      userModel: userModel == freezed
+          ? _value.userModel
+          : userModel // ignore: cast_nullable_to_non_nullable
+              as User,
     ));
   }
 }
@@ -520,15 +543,19 @@ class __$$_AppStateCopyWithImpl<$Res> extends _$AppStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_AppState implements _AppState {
-  const _$_AppState({this.status = AppStatus.unauthenticated});
+  const _$_AppState(
+      {this.status = AppStatus.unauthenticated, this.userModel = User.empty});
 
   @override
   @JsonKey()
   final AppStatus status;
+  @override
+  @JsonKey()
+  final User userModel;
 
   @override
   String toString() {
-    return 'AppState(status: $status)';
+    return 'AppState(status: $status, userModel: $userModel)';
   }
 
   @override
@@ -536,12 +563,15 @@ class _$_AppState implements _AppState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_AppState &&
-            const DeepCollectionEquality().equals(other.status, status));
+            const DeepCollectionEquality().equals(other.status, status) &&
+            const DeepCollectionEquality().equals(other.userModel, userModel));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(status));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(status),
+      const DeepCollectionEquality().hash(userModel));
 
   @JsonKey(ignore: true)
   @override
@@ -550,10 +580,13 @@ class _$_AppState implements _AppState {
 }
 
 abstract class _AppState implements AppState {
-  const factory _AppState({final AppStatus status}) = _$_AppState;
+  const factory _AppState({final AppStatus status, final User userModel}) =
+      _$_AppState;
 
   @override
   AppStatus get status;
+  @override
+  User get userModel;
   @override
   @JsonKey(ignore: true)
   _$$_AppStateCopyWith<_$_AppState> get copyWith =>

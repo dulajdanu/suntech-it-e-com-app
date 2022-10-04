@@ -29,4 +29,13 @@ class AppConstants {
 
   ///Home page horizontal margin
   static final homePageHorizontalMargin = 30.w;
+
+  ///Light black color
+  static const lightBlackColor = Color(0xff262626);
+
+  ///gradient color list
+  static List<Color> gradientColors = [
+    const Color(0xff4FBBE3),
+    const Color(0xff4E5BB3),
+  ];
 }

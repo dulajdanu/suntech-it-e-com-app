@@ -7,6 +7,8 @@ enum AppStatus {
 
 @freezed
 class AppState with _$AppState {
-  const factory AppState(
-      {@Default(AppStatus.unauthenticated) AppStatus status}) = _AppState;
+  const factory AppState({
+    @Default(AppStatus.unauthenticated) AppStatus status,
+    @Default(User.empty) User userModel,
+  }) = _AppState;
 }
