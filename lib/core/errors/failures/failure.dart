@@ -16,4 +16,8 @@ class Failure with _$Failure {
   ///Cache failure is returned when there is a exception in Cache
 
   const factory Failure.cacheFailure(String message) = CacheFailure;
+
+  ///ResetPasswordFailure is returned when there is a exception in reset password
+
+  const factory Failure.resetPassword(String message) = ResetPasswordFailure;
 }

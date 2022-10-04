@@ -23,6 +23,7 @@ mixin _$Exceptions {
     required TResult Function(String message, String? devLogs) loginException,
     required TResult Function(String message, String? devLogs) signUpException,
     required TResult Function(String message, String? devLogs) signOutException,
+    required TResult Function(String message, String? devLogs) resetPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,6 +31,7 @@ mixin _$Exceptions {
     TResult Function(String message, String? devLogs)? loginException,
     TResult Function(String message, String? devLogs)? signUpException,
     TResult Function(String message, String? devLogs)? signOutException,
+    TResult Function(String message, String? devLogs)? resetPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,6 +39,7 @@ mixin _$Exceptions {
     TResult Function(String message, String? devLogs)? loginException,
     TResult Function(String message, String? devLogs)? signUpException,
     TResult Function(String message, String? devLogs)? signOutException,
+    TResult Function(String message, String? devLogs)? resetPassword,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -45,6 +48,7 @@ mixin _$Exceptions {
     required TResult Function(LoginException value) loginException,
     required TResult Function(SignUpException value) signUpException,
     required TResult Function(SignOutException value) signOutException,
+    required TResult Function(ResetPasswordException value) resetPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -52,6 +56,7 @@ mixin _$Exceptions {
     TResult Function(LoginException value)? loginException,
     TResult Function(SignUpException value)? signUpException,
     TResult Function(SignOutException value)? signOutException,
+    TResult Function(ResetPasswordException value)? resetPassword,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -59,6 +64,7 @@ mixin _$Exceptions {
     TResult Function(LoginException value)? loginException,
     TResult Function(SignUpException value)? signUpException,
     TResult Function(SignOutException value)? signOutException,
+    TResult Function(ResetPasswordException value)? resetPassword,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -182,6 +188,7 @@ class _$LoginException implements LoginException {
     required TResult Function(String message, String? devLogs) loginException,
     required TResult Function(String message, String? devLogs) signUpException,
     required TResult Function(String message, String? devLogs) signOutException,
+    required TResult Function(String message, String? devLogs) resetPassword,
   }) {
     return loginException(message, devLogs);
   }
@@ -192,6 +199,7 @@ class _$LoginException implements LoginException {
     TResult Function(String message, String? devLogs)? loginException,
     TResult Function(String message, String? devLogs)? signUpException,
     TResult Function(String message, String? devLogs)? signOutException,
+    TResult Function(String message, String? devLogs)? resetPassword,
   }) {
     return loginException?.call(message, devLogs);
   }
@@ -202,6 +210,7 @@ class _$LoginException implements LoginException {
     TResult Function(String message, String? devLogs)? loginException,
     TResult Function(String message, String? devLogs)? signUpException,
     TResult Function(String message, String? devLogs)? signOutException,
+    TResult Function(String message, String? devLogs)? resetPassword,
     required TResult orElse(),
   }) {
     if (loginException != null) {
@@ -216,6 +225,7 @@ class _$LoginException implements LoginException {
     required TResult Function(LoginException value) loginException,
     required TResult Function(SignUpException value) signUpException,
     required TResult Function(SignOutException value) signOutException,
+    required TResult Function(ResetPasswordException value) resetPassword,
   }) {
     return loginException(this);
   }
@@ -226,6 +236,7 @@ class _$LoginException implements LoginException {
     TResult Function(LoginException value)? loginException,
     TResult Function(SignUpException value)? signUpException,
     TResult Function(SignOutException value)? signOutException,
+    TResult Function(ResetPasswordException value)? resetPassword,
   }) {
     return loginException?.call(this);
   }
@@ -236,6 +247,7 @@ class _$LoginException implements LoginException {
     TResult Function(LoginException value)? loginException,
     TResult Function(SignUpException value)? signUpException,
     TResult Function(SignOutException value)? signOutException,
+    TResult Function(ResetPasswordException value)? resetPassword,
     required TResult orElse(),
   }) {
     if (loginException != null) {
@@ -339,6 +351,7 @@ class _$SignUpException implements SignUpException {
     required TResult Function(String message, String? devLogs) loginException,
     required TResult Function(String message, String? devLogs) signUpException,
     required TResult Function(String message, String? devLogs) signOutException,
+    required TResult Function(String message, String? devLogs) resetPassword,
   }) {
     return signUpException(message, devLogs);
   }
@@ -349,6 +362,7 @@ class _$SignUpException implements SignUpException {
     TResult Function(String message, String? devLogs)? loginException,
     TResult Function(String message, String? devLogs)? signUpException,
     TResult Function(String message, String? devLogs)? signOutException,
+    TResult Function(String message, String? devLogs)? resetPassword,
   }) {
     return signUpException?.call(message, devLogs);
   }
@@ -359,6 +373,7 @@ class _$SignUpException implements SignUpException {
     TResult Function(String message, String? devLogs)? loginException,
     TResult Function(String message, String? devLogs)? signUpException,
     TResult Function(String message, String? devLogs)? signOutException,
+    TResult Function(String message, String? devLogs)? resetPassword,
     required TResult orElse(),
   }) {
     if (signUpException != null) {
@@ -373,6 +388,7 @@ class _$SignUpException implements SignUpException {
     required TResult Function(LoginException value) loginException,
     required TResult Function(SignUpException value) signUpException,
     required TResult Function(SignOutException value) signOutException,
+    required TResult Function(ResetPasswordException value) resetPassword,
   }) {
     return signUpException(this);
   }
@@ -383,6 +399,7 @@ class _$SignUpException implements SignUpException {
     TResult Function(LoginException value)? loginException,
     TResult Function(SignUpException value)? signUpException,
     TResult Function(SignOutException value)? signOutException,
+    TResult Function(ResetPasswordException value)? resetPassword,
   }) {
     return signUpException?.call(this);
   }
@@ -393,6 +410,7 @@ class _$SignUpException implements SignUpException {
     TResult Function(LoginException value)? loginException,
     TResult Function(SignUpException value)? signUpException,
     TResult Function(SignOutException value)? signOutException,
+    TResult Function(ResetPasswordException value)? resetPassword,
     required TResult orElse(),
   }) {
     if (signUpException != null) {
@@ -496,6 +514,7 @@ class _$SignOutException implements SignOutException {
     required TResult Function(String message, String? devLogs) loginException,
     required TResult Function(String message, String? devLogs) signUpException,
     required TResult Function(String message, String? devLogs) signOutException,
+    required TResult Function(String message, String? devLogs) resetPassword,
   }) {
     return signOutException(message, devLogs);
   }
@@ -506,6 +525,7 @@ class _$SignOutException implements SignOutException {
     TResult Function(String message, String? devLogs)? loginException,
     TResult Function(String message, String? devLogs)? signUpException,
     TResult Function(String message, String? devLogs)? signOutException,
+    TResult Function(String message, String? devLogs)? resetPassword,
   }) {
     return signOutException?.call(message, devLogs);
   }
@@ -516,6 +536,7 @@ class _$SignOutException implements SignOutException {
     TResult Function(String message, String? devLogs)? loginException,
     TResult Function(String message, String? devLogs)? signUpException,
     TResult Function(String message, String? devLogs)? signOutException,
+    TResult Function(String message, String? devLogs)? resetPassword,
     required TResult orElse(),
   }) {
     if (signOutException != null) {
@@ -530,6 +551,7 @@ class _$SignOutException implements SignOutException {
     required TResult Function(LoginException value) loginException,
     required TResult Function(SignUpException value) signUpException,
     required TResult Function(SignOutException value) signOutException,
+    required TResult Function(ResetPasswordException value) resetPassword,
   }) {
     return signOutException(this);
   }
@@ -540,6 +562,7 @@ class _$SignOutException implements SignOutException {
     TResult Function(LoginException value)? loginException,
     TResult Function(SignUpException value)? signUpException,
     TResult Function(SignOutException value)? signOutException,
+    TResult Function(ResetPasswordException value)? resetPassword,
   }) {
     return signOutException?.call(this);
   }
@@ -550,6 +573,7 @@ class _$SignOutException implements SignOutException {
     TResult Function(LoginException value)? loginException,
     TResult Function(SignUpException value)? signUpException,
     TResult Function(SignOutException value)? signOutException,
+    TResult Function(ResetPasswordException value)? resetPassword,
     required TResult orElse(),
   }) {
     if (signOutException != null) {
@@ -570,5 +594,170 @@ abstract class SignOutException implements Exceptions {
   @override
   @JsonKey(ignore: true)
   _$$SignOutExceptionCopyWith<_$SignOutException> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ResetPasswordExceptionCopyWith<$Res>
+    implements $ExceptionsCopyWith<$Res> {
+  factory _$$ResetPasswordExceptionCopyWith(_$ResetPasswordException value,
+          $Res Function(_$ResetPasswordException) then) =
+      __$$ResetPasswordExceptionCopyWithImpl<$Res>;
+  @override
+  $Res call({String message, String? devLogs});
+}
+
+/// @nodoc
+class __$$ResetPasswordExceptionCopyWithImpl<$Res>
+    extends _$ExceptionsCopyWithImpl<$Res>
+    implements _$$ResetPasswordExceptionCopyWith<$Res> {
+  __$$ResetPasswordExceptionCopyWithImpl(_$ResetPasswordException _value,
+      $Res Function(_$ResetPasswordException) _then)
+      : super(_value, (v) => _then(v as _$ResetPasswordException));
+
+  @override
+  _$ResetPasswordException get _value =>
+      super._value as _$ResetPasswordException;
+
+  @override
+  $Res call({
+    Object? message = freezed,
+    Object? devLogs = freezed,
+  }) {
+    return _then(_$ResetPasswordException(
+      message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+      devLogs == freezed
+          ? _value.devLogs
+          : devLogs // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ResetPasswordException implements ResetPasswordException {
+  const _$ResetPasswordException(this.message, [this.devLogs]);
+
+  @override
+  final String message;
+  @override
+  final String? devLogs;
+
+  @override
+  String toString() {
+    return 'Exceptions.resetPassword(message: $message, devLogs: $devLogs)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ResetPasswordException &&
+            const DeepCollectionEquality().equals(other.message, message) &&
+            const DeepCollectionEquality().equals(other.devLogs, devLogs));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(message),
+      const DeepCollectionEquality().hash(devLogs));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$ResetPasswordExceptionCopyWith<_$ResetPasswordException> get copyWith =>
+      __$$ResetPasswordExceptionCopyWithImpl<_$ResetPasswordException>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String message, String? devLogs) loginException,
+    required TResult Function(String message, String? devLogs) signUpException,
+    required TResult Function(String message, String? devLogs) signOutException,
+    required TResult Function(String message, String? devLogs) resetPassword,
+  }) {
+    return resetPassword(message, devLogs);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message, String? devLogs)? loginException,
+    TResult Function(String message, String? devLogs)? signUpException,
+    TResult Function(String message, String? devLogs)? signOutException,
+    TResult Function(String message, String? devLogs)? resetPassword,
+  }) {
+    return resetPassword?.call(message, devLogs);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message, String? devLogs)? loginException,
+    TResult Function(String message, String? devLogs)? signUpException,
+    TResult Function(String message, String? devLogs)? signOutException,
+    TResult Function(String message, String? devLogs)? resetPassword,
+    required TResult orElse(),
+  }) {
+    if (resetPassword != null) {
+      return resetPassword(message, devLogs);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoginException value) loginException,
+    required TResult Function(SignUpException value) signUpException,
+    required TResult Function(SignOutException value) signOutException,
+    required TResult Function(ResetPasswordException value) resetPassword,
+  }) {
+    return resetPassword(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LoginException value)? loginException,
+    TResult Function(SignUpException value)? signUpException,
+    TResult Function(SignOutException value)? signOutException,
+    TResult Function(ResetPasswordException value)? resetPassword,
+  }) {
+    return resetPassword?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoginException value)? loginException,
+    TResult Function(SignUpException value)? signUpException,
+    TResult Function(SignOutException value)? signOutException,
+    TResult Function(ResetPasswordException value)? resetPassword,
+    required TResult orElse(),
+  }) {
+    if (resetPassword != null) {
+      return resetPassword(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ResetPasswordException implements Exceptions {
+  const factory ResetPasswordException(final String message,
+      [final String? devLogs]) = _$ResetPasswordException;
+
+  @override
+  String get message;
+  @override
+  String? get devLogs;
+  @override
+  @JsonKey(ignore: true)
+  _$$ResetPasswordExceptionCopyWith<_$ResetPasswordException> get copyWith =>
       throw _privateConstructorUsedError;
 }

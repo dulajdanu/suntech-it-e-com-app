@@ -7,8 +7,8 @@ part 'response_model.g.dart';
 @freezed
 class ResponseModel with _$ResponseModel {
   const factory ResponseModel({
-    @JsonKey(name: 'title') required String title,
-    @JsonKey(name: 'message') required String message,
+    @Default("") @JsonKey(name: 'title') String title,
+    @Default("") @JsonKey(name: 'message') String message,
   }) = _ResponseModel;
 
   factory ResponseModel.fromJson(Map<String, dynamic> json) =>

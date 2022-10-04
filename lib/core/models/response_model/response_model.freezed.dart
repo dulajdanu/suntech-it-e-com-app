@@ -113,8 +113,8 @@ class __$$_ResponseModelCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ResponseModel extends _ResponseModel {
   const _$_ResponseModel(
-      {@JsonKey(name: 'title') required this.title,
-      @JsonKey(name: 'message') required this.message})
+      {@JsonKey(name: 'title') this.title = "",
+      @JsonKey(name: 'message') this.message = ""})
       : super._();
 
   factory _$_ResponseModel.fromJson(Map<String, dynamic> json) =>
@@ -163,9 +163,8 @@ class _$_ResponseModel extends _ResponseModel {
 
 abstract class _ResponseModel extends ResponseModel {
   const factory _ResponseModel(
-          {@JsonKey(name: 'title') required final String title,
-          @JsonKey(name: 'message') required final String message}) =
-      _$_ResponseModel;
+      {@JsonKey(name: 'title') final String title,
+      @JsonKey(name: 'message') final String message}) = _$_ResponseModel;
   const _ResponseModel._() : super._();
 
   factory _ResponseModel.fromJson(Map<String, dynamic> json) =

@@ -4,6 +4,10 @@ import 'package:suntech_it_e_com_app/features/auth/login/data/datasources/login_
 import 'package:suntech_it_e_com_app/features/auth/login/data/datasources/login_datasource_impl.dart';
 import 'package:suntech_it_e_com_app/features/auth/login/data/repositories/login_repository.dart';
 import 'package:suntech_it_e_com_app/features/auth/login/data/repositories/login_repository_impl.dart';
+import 'package:suntech_it_e_com_app/features/auth/reset_password/data/datasources/reset_password_datasource.dart';
+import 'package:suntech_it_e_com_app/features/auth/reset_password/data/datasources/reset_password_datasource_impl.dart';
+import 'package:suntech_it_e_com_app/features/auth/reset_password/data/repositories/reset_password_repository.dart';
+import 'package:suntech_it_e_com_app/features/auth/reset_password/data/repositories/reset_password_repository_impl.dart';
 import 'package:suntech_it_e_com_app/features/auth/sign_up/data/datasources/sign_up_datasource.dart';
 import 'package:suntech_it_e_com_app/features/auth/sign_up/data/datasources/sign_up_datasource_impl.dart';
 import 'package:suntech_it_e_com_app/features/auth/sign_up/data/repositories/sign_up_repository.dart';
@@ -33,6 +37,14 @@ void setupLocator() {
 
   registerLazySingleton<LoginRepository>(LoginRepsitoryImpl(
     loginDatasource: serviceLocator(),
+  ));
+
+  //Reset password
+  //data source
+  registerLazySingleton<ResetPasswordDatasource>(ResetPasswordDatasourceImpl());
+  //repo
+  registerLazySingleton<ResetPasswordRepository>(ResetPasswordRepsitoryImpl(
+    resetPasswordDatasource: serviceLocator(),
   ));
 }
 

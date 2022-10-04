@@ -2,6 +2,12 @@ class ErrorMessages {
   //signup
   static const signUpErrorMessage = "An error occurred while creating new user";
   //signup
+
+  ///reset password
+  static const resetPasswordErrorMessage =
+      "An error occurred while resetting the password . Please try again";
+
+  ///
   static const loginErrorMessage =
       'An error occurred when trying to authenticate with the provided mail';
   static const signOutErrorMessage = 'An error occurred when trying sign-out';

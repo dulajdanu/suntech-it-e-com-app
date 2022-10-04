@@ -15,4 +15,8 @@ class Exceptions with _$Exceptions implements Exception {
   ///Thrown when there is a  exception in Sign Out
   const factory Exceptions.signOutException(String message, [String? devLogs]) =
       SignOutException;
+
+  ///Thrown when there is a  exception in reset Password
+  const factory Exceptions.resetPassword(String message, [String? devLogs]) =
+      ResetPasswordException;
 }
