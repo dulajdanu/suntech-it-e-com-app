@@ -5,7 +5,7 @@ import 'package:suntech_it_e_com_app/core/constants/app_constants.dart';
 import 'package:suntech_it_e_com_app/core/widgets/custom_widgets.dart';
 import 'package:suntech_it_e_com_app/features/auth/reset_password/cubit/reset_password_cubit.dart';
 import 'package:suntech_it_e_com_app/features/auth/reset_password/presentation/widgets/pin_input_widget.dart';
-import 'package:suntech_it_e_com_app/features/auth/widgets/auth_action_button_widget.dart';
+import 'package:suntech_it_e_com_app/features/auth/reset_password/presentation/widgets/reset_password_continue_button_widget.dart';
 
 class VerificationView extends StatelessWidget {
   const VerificationView({Key? key}) : super(key: key);
@@ -45,23 +45,25 @@ class VerificationView extends StatelessWidget {
             // color: Colors.green,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                PinInputWidget(),
-                PinInputWidget(),
-                PinInputWidget(),
-                PinInputWidget(),
+              children: [
+                PinInputWidget(
+                  slotNumber: 0,
+                ),
+                PinInputWidget(
+                  slotNumber: 1,
+                ),
+                PinInputWidget(
+                  slotNumber: 2,
+                ),
+                PinInputWidget(
+                  slotNumber: 3,
+                ),
               ],
             ),
           ),
           SizedBox(height: 48.h),
-          AuthActionButtonWidget(
-            buttonText: 'Continue',
-            callback: () {},
-            margin: EdgeInsets.symmetric(
-              horizontal: 23.w,
-              vertical: 25.h,
-            ),
-          ),
+          //
+          const ResetPasswordContinueButtonWidget(),
           Container(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,

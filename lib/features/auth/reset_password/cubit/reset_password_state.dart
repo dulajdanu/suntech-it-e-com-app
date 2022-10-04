@@ -17,5 +17,8 @@ class ResetPasswordState with _$ResetPasswordState {
 
     ///The state received from the server after password reset initalization
     String? stateReceived,
+
+    ///The pin code entered by the user
+    @Default(["", "", "", ""]) List<String> pinNumbers,
   }) = _ResetPasswordState;
 }

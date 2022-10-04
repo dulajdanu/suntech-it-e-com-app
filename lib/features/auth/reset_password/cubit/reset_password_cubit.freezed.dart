@@ -31,6 +31,9 @@ mixin _$ResetPasswordState {
   ///The state received from the server after password reset initalization
   String? get stateReceived => throw _privateConstructorUsedError;
 
+  ///The pin code entered by the user
+  List<String> get pinNumbers => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $ResetPasswordStateCopyWith<ResetPasswordState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -46,7 +49,8 @@ abstract class $ResetPasswordStateCopyWith<$Res> {
       FormzStatus formStatus,
       String? submissionFailureMessage,
       ResponseModel? responseModel,
-      String? stateReceived});
+      String? stateReceived,
+      List<String> pinNumbers});
 
   $ResponseModelCopyWith<$Res>? get responseModel;
 }
@@ -67,6 +71,7 @@ class _$ResetPasswordStateCopyWithImpl<$Res>
     Object? submissionFailureMessage = freezed,
     Object? responseModel = freezed,
     Object? stateReceived = freezed,
+    Object? pinNumbers = freezed,
   }) {
     return _then(_value.copyWith(
       email: email == freezed
@@ -89,6 +94,10 @@ class _$ResetPasswordStateCopyWithImpl<$Res>
           ? _value.stateReceived
           : stateReceived // ignore: cast_nullable_to_non_nullable
               as String?,
+      pinNumbers: pinNumbers == freezed
+          ? _value.pinNumbers
+          : pinNumbers // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 
@@ -116,7 +125,8 @@ abstract class _$$_ResetPasswordStateCopyWith<$Res>
       FormzStatus formStatus,
       String? submissionFailureMessage,
       ResponseModel? responseModel,
-      String? stateReceived});
+      String? stateReceived,
+      List<String> pinNumbers});
 
   @override
   $ResponseModelCopyWith<$Res>? get responseModel;
@@ -140,6 +150,7 @@ class __$$_ResetPasswordStateCopyWithImpl<$Res>
     Object? submissionFailureMessage = freezed,
     Object? responseModel = freezed,
     Object? stateReceived = freezed,
+    Object? pinNumbers = freezed,
   }) {
     return _then(_$_ResetPasswordState(
       email: email == freezed
@@ -162,6 +173,10 @@ class __$$_ResetPasswordStateCopyWithImpl<$Res>
           ? _value.stateReceived
           : stateReceived // ignore: cast_nullable_to_non_nullable
               as String?,
+      pinNumbers: pinNumbers == freezed
+          ? _value._pinNumbers
+          : pinNumbers // ignore: cast_nullable_to_non_nullable
+              as List<String>,
     ));
   }
 }
@@ -174,7 +189,9 @@ class _$_ResetPasswordState implements _ResetPasswordState {
       this.formStatus = FormzStatus.pure,
       this.submissionFailureMessage,
       this.responseModel,
-      this.stateReceived});
+      this.stateReceived,
+      final List<String> pinNumbers = const ["", "", "", ""]})
+      : _pinNumbers = pinNumbers;
 
   ///email of the user
   @override
@@ -198,9 +215,20 @@ class _$_ResetPasswordState implements _ResetPasswordState {
   @override
   final String? stateReceived;
 
+  ///The pin code entered by the user
+  final List<String> _pinNumbers;
+
+  ///The pin code entered by the user
+  @override
+  @JsonKey()
+  List<String> get pinNumbers {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_pinNumbers);
+  }
+
   @override
   String toString() {
-    return 'ResetPasswordState(email: $email, formStatus: $formStatus, submissionFailureMessage: $submissionFailureMessage, responseModel: $responseModel, stateReceived: $stateReceived)';
+    return 'ResetPasswordState(email: $email, formStatus: $formStatus, submissionFailureMessage: $submissionFailureMessage, responseModel: $responseModel, stateReceived: $stateReceived, pinNumbers: $pinNumbers)';
   }
 
   @override
@@ -216,7 +244,9 @@ class _$_ResetPasswordState implements _ResetPasswordState {
             const DeepCollectionEquality()
                 .equals(other.responseModel, responseModel) &&
             const DeepCollectionEquality()
-                .equals(other.stateReceived, stateReceived));
+                .equals(other.stateReceived, stateReceived) &&
+            const DeepCollectionEquality()
+                .equals(other._pinNumbers, _pinNumbers));
   }
 
   @override
@@ -226,7 +256,8 @@ class _$_ResetPasswordState implements _ResetPasswordState {
       const DeepCollectionEquality().hash(formStatus),
       const DeepCollectionEquality().hash(submissionFailureMessage),
       const DeepCollectionEquality().hash(responseModel),
-      const DeepCollectionEquality().hash(stateReceived));
+      const DeepCollectionEquality().hash(stateReceived),
+      const DeepCollectionEquality().hash(_pinNumbers));
 
   @JsonKey(ignore: true)
   @override
@@ -241,7 +272,8 @@ abstract class _ResetPasswordState implements ResetPasswordState {
       final FormzStatus formStatus,
       final String? submissionFailureMessage,
       final ResponseModel? responseModel,
-      final String? stateReceived}) = _$_ResetPasswordState;
+      final String? stateReceived,
+      final List<String> pinNumbers}) = _$_ResetPasswordState;
 
   @override
 
@@ -263,6 +295,10 @@ abstract class _ResetPasswordState implements ResetPasswordState {
 
   ///The state received from the server after password reset initalization
   String? get stateReceived;
+  @override
+
+  ///The pin code entered by the user
+  List<String> get pinNumbers;
   @override
   @JsonKey(ignore: true)
   _$$_ResetPasswordStateCopyWith<_$_ResetPasswordState> get copyWith =>

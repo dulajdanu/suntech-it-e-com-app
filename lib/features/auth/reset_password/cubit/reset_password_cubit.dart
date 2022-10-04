@@ -41,4 +41,20 @@ class ResetPasswordCubit extends Cubit<ResetPasswordState> {
     final email = Email.dirty(value);
     emit(state.copyWith(email: email, formStatus: Formz.validate([email])));
   }
+
+  void onPinCodeChanged(int slotNumber, String value) {
+    final List<String> tempList = List.from(state.pinNumbers);
+
+    tempList[slotNumber] = value;
+
+    emit(state.copyWith(pinNumbers: tempList));
+  }
+
+  void onBackButtonPressed() {
+    emit(
+      state.copyWith(
+        pinNumbers: List.filled(4, ""),
+      ),
+    );
+  }
 }
