@@ -28,4 +28,9 @@ class Failure with _$Failure {
   ///returned when there is a products fetch exception
 
   const factory Failure.productsFetch(String message) = ProductsFetchFailure;
+
+  ///returned when there is a  fetch product image exception
+
+  const factory Failure.fetchProductImage(String message) =
+      FetchProductImageFailure;
 }

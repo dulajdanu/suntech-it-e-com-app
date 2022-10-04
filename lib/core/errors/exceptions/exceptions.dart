@@ -27,4 +27,8 @@ class Exceptions with _$Exceptions implements Exception {
   ///Thrown when there is a  exception in fetching products
   const factory Exceptions.productsFetch(String message, [String? devLogs]) =
       ProductsFetchException;
+
+  ///Thrown when there is a  exception in fetching product image
+  const factory Exceptions.fetchProductImage(String message,
+      [String? devLogs]) = FetchProductImageException;
 }

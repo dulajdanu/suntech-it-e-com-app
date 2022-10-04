@@ -19,4 +19,14 @@ class HomeRepsitoryImpl implements HomeRepository {
       return left(Failure.productsFetch(e.message));
     }
   }
+
+  @override
+  RvfEither<String> getProductImage(String productID) async {
+    try {
+      final result = await _homeDatasource.getProductImage(productID);
+      return right(result);
+    } on FetchProductImageException catch (e) {
+      return left(Failure.fetchProductImage(e.message));
+    }
+  }
 }

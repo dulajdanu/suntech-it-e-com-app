@@ -6,12 +6,24 @@ import 'package:suntech_it_e_com_app/core/constants/app_constants.dart';
 import 'package:suntech_it_e_com_app/core/models/product_model/product_model.dart';
 import 'package:suntech_it_e_com_app/core/widgets/custom_widgets.dart';
 
-class ProductDetailsCard extends StatelessWidget {
+class ProductDetailsCard extends StatefulWidget {
   const ProductDetailsCard({
     Key? key,
     required this.productModel,
   }) : super(key: key);
   final ProductModel productModel;
+
+  @override
+  State<ProductDetailsCard> createState() => _ProductDetailsCardState();
+}
+
+class _ProductDetailsCardState extends State<ProductDetailsCard> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -36,7 +48,7 @@ class ProductDetailsCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Flexible(
-                      child: Text(productModel.name,
+                      child: Text(widget.productModel.name,
                           overflow: TextOverflow.ellipsis,
                           textDirection: TextDirection.ltr,
                           style: const TextStyle(
@@ -57,7 +69,7 @@ class ProductDetailsCard extends StatelessWidget {
                 child: Row(
                   children: [
                     TextCustomWidget(
-                      text: productModel.rating.toString(),
+                      text: widget.productModel.rating.toString(),
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w600,
                     ),
@@ -74,7 +86,7 @@ class ProductDetailsCard extends StatelessWidget {
                   // color: Colors.grey,
                   alignment: Alignment.center,
                   child: CachedNetworkImage(
-                    imageUrl: productModel.imageUrl ??
+                    imageUrl: widget.productModel.imageUrl ??
                         "https://icon-library.com/images/products-icon-png/products-icon-png-9.jpg",
                     placeholder: (context, url) =>
                         const CircularProgressIndicator(),

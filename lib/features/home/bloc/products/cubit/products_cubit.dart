@@ -25,6 +25,37 @@ class ProductsCubit extends Cubit<ProductsState> {
       (products) {
         //
         emit(ProductsState.loaded(products));
+        fetchProductImages();
+      },
+    );
+  }
+
+  Future<void> fetchProductImages() async {
+    await state.whenOrNull(
+      loaded: (products) async {
+        products.asMap().forEach((index, product) async {
+          final result = await _homeRepository.getProductImage(product.id);
+
+          result.fold(
+            (l) {
+              //
+            },
+            (imageUrl) {
+              //
+
+              var temp = state.whenOrNull(
+                loaded: (products) => products,
+              );
+
+              if (temp != null) {
+                temp[index] = product.copyWith(
+                  imageUrl: imageUrl,
+                );
+                emit(ProductsState.loaded(temp));
+              }
+            },
+          );
+        });
       },
     );
   }

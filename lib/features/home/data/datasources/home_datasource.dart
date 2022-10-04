@@ -3,4 +3,6 @@ import 'package:suntech_it_e_com_app/core/type_defs/type_defs.dart';
 
 abstract class HomeDatasource {
   Rvf<List<ProductModel>> getAllProducts();
+
+  Rvf<String> getProductImage(String productID);
 }

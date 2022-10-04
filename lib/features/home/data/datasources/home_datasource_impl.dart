@@ -40,4 +40,31 @@ class HomeDatasourceImpl implements HomeDatasource {
           ErrorMessages.productsFetchErrorMessage);
     }
   }
+
+  @override
+  Rvf<String> getProductImage(String productID) async {
+    try {
+      final token = await _flutterSecureStorage.read(
+        key: 'token',
+      );
+      final response = await http.get(
+        Uri.parse(
+            'https://qa.tellnshare.co/demo/api/v1/product/image/$productID'),
+        headers: {HttpHeaders.authorizationHeader: "Bearer $token"},
+      );
+
+      final jsonResponse = json.decode(response.body);
+
+      if (response.statusCode == 200) {
+        return "";
+      } else {
+        throw Exceptions.fetchProductImage(jsonResponse['message']);
+      }
+    } on ProductsFetchException catch (e) {
+      throw Exceptions.fetchProductImage(e.message);
+    } catch (e) {
+      throw const Exceptions.fetchProductImage(
+          ErrorMessages.productsFetchErrorMessage);
+    }
+  }
 }
