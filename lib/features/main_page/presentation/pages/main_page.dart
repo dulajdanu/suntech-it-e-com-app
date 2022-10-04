@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:suntech_it_e_com_app/core/constants/app_constants.dart';
 import 'package:suntech_it_e_com_app/core/widgets/custom_widgets.dart';
+import 'package:suntech_it_e_com_app/features/cart/presentation/cart_page.dart';
+import 'package:suntech_it_e_com_app/features/favourites/presentation/favourites_page.dart';
 import 'package:suntech_it_e_com_app/features/home/presentation/pages/home_page.dart';
 import 'package:suntech_it_e_com_app/features/main_page/presentation/widgets/selected_icon_widget.dart';
 import 'package:suntech_it_e_com_app/features/user_profile/presentation/pages/user_profile_page.dart';
@@ -20,8 +22,8 @@ class _MainPageState extends State<MainPage> {
 
   final List<Widget> screens = [
     const HomePage(),
-    const HomePage(),
-    const UserProfilePage(),
+    const FavoritesPage(),
+    const CartPage(),
     const UserProfilePage(),
   ];
 
