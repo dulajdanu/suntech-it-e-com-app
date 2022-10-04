@@ -4,6 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:suntech_it_e_com_app/core/constants/app_constants.dart';
 import 'package:suntech_it_e_com_app/core/widgets/custom_widgets.dart';
 import 'package:suntech_it_e_com_app/features/home/presentation/widgets/banner_widget.dart';
+import 'package:suntech_it_e_com_app/features/home/presentation/widgets/categories_widget.dart';
+import 'package:suntech_it_e_com_app/features/home/presentation/widgets/category_name_widget.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -75,7 +77,8 @@ class HomeView extends StatelessWidget {
             scale: 0.9,
             pagination: const SwiperPagination(),
           ),
-        )
+        ),
+        const CategoriesWidget(),
       ],
     );
   }
