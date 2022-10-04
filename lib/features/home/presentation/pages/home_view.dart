@@ -1,7 +1,9 @@
+import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:suntech_it_e_com_app/core/constants/app_constants.dart';
 import 'package:suntech_it_e_com_app/core/widgets/custom_widgets.dart';
+import 'package:suntech_it_e_com_app/features/home/presentation/widgets/banner_widget.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -61,9 +63,18 @@ class HomeView extends StatelessWidget {
         SizedBox(
           height: 28.h,
         ),
-        Container(
-          color: Colors.red,
+        SizedBox(
+          // color: Colors.red,
           height: 189.h,
+          child: Swiper(
+            itemBuilder: (BuildContext context, int index) {
+              return const BannerWidget();
+            },
+            itemCount: 3,
+            viewportFraction: 0.8,
+            scale: 0.9,
+            pagination: const SwiperPagination(),
+          ),
         )
       ],
     );
