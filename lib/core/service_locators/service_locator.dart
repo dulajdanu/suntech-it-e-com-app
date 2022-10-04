@@ -16,6 +16,10 @@ import 'package:suntech_it_e_com_app/features/auth/sign_up/data/datasources/sign
 import 'package:suntech_it_e_com_app/features/auth/sign_up/data/datasources/sign_up_datasource_impl.dart';
 import 'package:suntech_it_e_com_app/features/auth/sign_up/data/repositories/sign_up_repository.dart';
 import 'package:suntech_it_e_com_app/features/auth/sign_up/data/repositories/sign_up_repository_impl.dart';
+import 'package:suntech_it_e_com_app/features/home/data/datasources/home_datasource.dart';
+import 'package:suntech_it_e_com_app/features/home/data/datasources/home_datasource_impl.dart';
+import 'package:suntech_it_e_com_app/features/home/data/repositories/home_repository.dart';
+import 'package:suntech_it_e_com_app/features/home/data/repositories/home_repository_impl.dart';
 
 final serviceLocator = GetIt.instance;
 
@@ -62,6 +66,14 @@ void setupLocator() {
   registerLazySingleton<ResetPasswordRepository>(ResetPasswordRepsitoryImpl(
     resetPasswordDatasource: serviceLocator(),
   ));
+
+  //Home repository
+  registerLazySingleton<HomeDatasource>(HomeDatasourceImpl(
+    flutterSecureStorage: serviceLocator<FlutterSecureStorage>(),
+  ));
+
+  registerLazySingleton<HomeRepository>(
+      HomeRepsitoryImpl(homeDatasource: serviceLocator()));
 }
 
 void registerLazySingleton<T extends Object>(T object) {

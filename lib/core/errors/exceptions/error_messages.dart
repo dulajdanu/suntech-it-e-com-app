@@ -18,4 +18,8 @@ class ErrorMessages {
   ///Profile update error
   static const profileUpdateErrorMessage =
       "An error occurred while updating the profile. Please try again";
+
+  //products fetch error message
+  static const productsFetchErrorMessage =
+      "An error occurred while fetching products. Please try again";
 }

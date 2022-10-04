@@ -1,11 +1,13 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:suntech_it_e_com_app/core/constants/app_constants.dart';
 import 'package:suntech_it_e_com_app/core/widgets/custom_widgets.dart';
+import 'package:suntech_it_e_com_app/features/home/bloc/products/cubit/products_cubit.dart';
 import 'package:suntech_it_e_com_app/features/home/presentation/widgets/banner_widget.dart';
 import 'package:suntech_it_e_com_app/features/home/presentation/widgets/categories_widget.dart';
-import 'package:suntech_it_e_com_app/features/home/presentation/widgets/category_name_widget.dart';
+import 'package:suntech_it_e_com_app/features/home/presentation/widgets/product_details_card.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -79,6 +81,48 @@ class HomeView extends StatelessWidget {
           ),
         ),
         const CategoriesWidget(),
+        Expanded(child: BlocBuilder<ProductsCubit, ProductsState>(
+          builder: (context, state) {
+            return state.maybeWhen(
+              errorOccuredWhileLoading: (errorMessage) {
+                return Center(
+                  child: TextCustomWidget(
+                    text: errorMessage,
+                    textStyle: const TextStyle(
+                      color: Colors.white,
+                    ),
+                    containerAlignment: Alignment.center,
+                  ),
+                );
+              },
+              loading: () {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              },
+              loaded: (products) {
+                return Container(
+                  margin: EdgeInsets.only(
+                    left: 30.w,
+                  ),
+                  // color: Colors.green,
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: products
+                          .map((productModel) =>
+                              ProductDetailsCard(productModel: productModel))
+                          .toList(),
+                    ),
+                  ),
+                );
+              },
+              orElse: () {
+                return const SizedBox();
+              },
+            );
+          },
+        )),
       ],
     );
   }

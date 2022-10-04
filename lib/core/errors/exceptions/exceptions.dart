@@ -23,4 +23,8 @@ class Exceptions with _$Exceptions implements Exception {
   ///Thrown when there is a  exception in updating profile
   const factory Exceptions.updateProfile(String message, [String? devLogs]) =
       UpdateProfileException;
+
+  ///Thrown when there is a  exception in fetching products
+  const factory Exceptions.productsFetch(String message, [String? devLogs]) =
+      ProductsFetchException;
 }

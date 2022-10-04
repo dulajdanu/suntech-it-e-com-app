@@ -24,4 +24,8 @@ class Failure with _$Failure {
   ///returned when there is a update profile exception
 
   const factory Failure.updateProfile(String message) = UpdateProfileFailure;
+
+  ///returned when there is a products fetch exception
+
+  const factory Failure.productsFetch(String message) = ProductsFetchFailure;
 }

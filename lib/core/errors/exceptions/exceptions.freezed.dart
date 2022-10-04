@@ -25,6 +25,7 @@ mixin _$Exceptions {
     required TResult Function(String message, String? devLogs) signOutException,
     required TResult Function(String message, String? devLogs) resetPassword,
     required TResult Function(String message, String? devLogs) updateProfile,
+    required TResult Function(String message, String? devLogs) productsFetch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -34,6 +35,7 @@ mixin _$Exceptions {
     TResult Function(String message, String? devLogs)? signOutException,
     TResult Function(String message, String? devLogs)? resetPassword,
     TResult Function(String message, String? devLogs)? updateProfile,
+    TResult Function(String message, String? devLogs)? productsFetch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -43,6 +45,7 @@ mixin _$Exceptions {
     TResult Function(String message, String? devLogs)? signOutException,
     TResult Function(String message, String? devLogs)? resetPassword,
     TResult Function(String message, String? devLogs)? updateProfile,
+    TResult Function(String message, String? devLogs)? productsFetch,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -53,6 +56,7 @@ mixin _$Exceptions {
     required TResult Function(SignOutException value) signOutException,
     required TResult Function(ResetPasswordException value) resetPassword,
     required TResult Function(UpdateProfileException value) updateProfile,
+    required TResult Function(ProductsFetchException value) productsFetch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,6 +66,7 @@ mixin _$Exceptions {
     TResult Function(SignOutException value)? signOutException,
     TResult Function(ResetPasswordException value)? resetPassword,
     TResult Function(UpdateProfileException value)? updateProfile,
+    TResult Function(ProductsFetchException value)? productsFetch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -71,6 +76,7 @@ mixin _$Exceptions {
     TResult Function(SignOutException value)? signOutException,
     TResult Function(ResetPasswordException value)? resetPassword,
     TResult Function(UpdateProfileException value)? updateProfile,
+    TResult Function(ProductsFetchException value)? productsFetch,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -196,6 +202,7 @@ class _$LoginException implements LoginException {
     required TResult Function(String message, String? devLogs) signOutException,
     required TResult Function(String message, String? devLogs) resetPassword,
     required TResult Function(String message, String? devLogs) updateProfile,
+    required TResult Function(String message, String? devLogs) productsFetch,
   }) {
     return loginException(message, devLogs);
   }
@@ -208,6 +215,7 @@ class _$LoginException implements LoginException {
     TResult Function(String message, String? devLogs)? signOutException,
     TResult Function(String message, String? devLogs)? resetPassword,
     TResult Function(String message, String? devLogs)? updateProfile,
+    TResult Function(String message, String? devLogs)? productsFetch,
   }) {
     return loginException?.call(message, devLogs);
   }
@@ -220,6 +228,7 @@ class _$LoginException implements LoginException {
     TResult Function(String message, String? devLogs)? signOutException,
     TResult Function(String message, String? devLogs)? resetPassword,
     TResult Function(String message, String? devLogs)? updateProfile,
+    TResult Function(String message, String? devLogs)? productsFetch,
     required TResult orElse(),
   }) {
     if (loginException != null) {
@@ -236,6 +245,7 @@ class _$LoginException implements LoginException {
     required TResult Function(SignOutException value) signOutException,
     required TResult Function(ResetPasswordException value) resetPassword,
     required TResult Function(UpdateProfileException value) updateProfile,
+    required TResult Function(ProductsFetchException value) productsFetch,
   }) {
     return loginException(this);
   }
@@ -248,6 +258,7 @@ class _$LoginException implements LoginException {
     TResult Function(SignOutException value)? signOutException,
     TResult Function(ResetPasswordException value)? resetPassword,
     TResult Function(UpdateProfileException value)? updateProfile,
+    TResult Function(ProductsFetchException value)? productsFetch,
   }) {
     return loginException?.call(this);
   }
@@ -260,6 +271,7 @@ class _$LoginException implements LoginException {
     TResult Function(SignOutException value)? signOutException,
     TResult Function(ResetPasswordException value)? resetPassword,
     TResult Function(UpdateProfileException value)? updateProfile,
+    TResult Function(ProductsFetchException value)? productsFetch,
     required TResult orElse(),
   }) {
     if (loginException != null) {
@@ -365,6 +377,7 @@ class _$SignUpException implements SignUpException {
     required TResult Function(String message, String? devLogs) signOutException,
     required TResult Function(String message, String? devLogs) resetPassword,
     required TResult Function(String message, String? devLogs) updateProfile,
+    required TResult Function(String message, String? devLogs) productsFetch,
   }) {
     return signUpException(message, devLogs);
   }
@@ -377,6 +390,7 @@ class _$SignUpException implements SignUpException {
     TResult Function(String message, String? devLogs)? signOutException,
     TResult Function(String message, String? devLogs)? resetPassword,
     TResult Function(String message, String? devLogs)? updateProfile,
+    TResult Function(String message, String? devLogs)? productsFetch,
   }) {
     return signUpException?.call(message, devLogs);
   }
@@ -389,6 +403,7 @@ class _$SignUpException implements SignUpException {
     TResult Function(String message, String? devLogs)? signOutException,
     TResult Function(String message, String? devLogs)? resetPassword,
     TResult Function(String message, String? devLogs)? updateProfile,
+    TResult Function(String message, String? devLogs)? productsFetch,
     required TResult orElse(),
   }) {
     if (signUpException != null) {
@@ -405,6 +420,7 @@ class _$SignUpException implements SignUpException {
     required TResult Function(SignOutException value) signOutException,
     required TResult Function(ResetPasswordException value) resetPassword,
     required TResult Function(UpdateProfileException value) updateProfile,
+    required TResult Function(ProductsFetchException value) productsFetch,
   }) {
     return signUpException(this);
   }
@@ -417,6 +433,7 @@ class _$SignUpException implements SignUpException {
     TResult Function(SignOutException value)? signOutException,
     TResult Function(ResetPasswordException value)? resetPassword,
     TResult Function(UpdateProfileException value)? updateProfile,
+    TResult Function(ProductsFetchException value)? productsFetch,
   }) {
     return signUpException?.call(this);
   }
@@ -429,6 +446,7 @@ class _$SignUpException implements SignUpException {
     TResult Function(SignOutException value)? signOutException,
     TResult Function(ResetPasswordException value)? resetPassword,
     TResult Function(UpdateProfileException value)? updateProfile,
+    TResult Function(ProductsFetchException value)? productsFetch,
     required TResult orElse(),
   }) {
     if (signUpException != null) {
@@ -534,6 +552,7 @@ class _$SignOutException implements SignOutException {
     required TResult Function(String message, String? devLogs) signOutException,
     required TResult Function(String message, String? devLogs) resetPassword,
     required TResult Function(String message, String? devLogs) updateProfile,
+    required TResult Function(String message, String? devLogs) productsFetch,
   }) {
     return signOutException(message, devLogs);
   }
@@ -546,6 +565,7 @@ class _$SignOutException implements SignOutException {
     TResult Function(String message, String? devLogs)? signOutException,
     TResult Function(String message, String? devLogs)? resetPassword,
     TResult Function(String message, String? devLogs)? updateProfile,
+    TResult Function(String message, String? devLogs)? productsFetch,
   }) {
     return signOutException?.call(message, devLogs);
   }
@@ -558,6 +578,7 @@ class _$SignOutException implements SignOutException {
     TResult Function(String message, String? devLogs)? signOutException,
     TResult Function(String message, String? devLogs)? resetPassword,
     TResult Function(String message, String? devLogs)? updateProfile,
+    TResult Function(String message, String? devLogs)? productsFetch,
     required TResult orElse(),
   }) {
     if (signOutException != null) {
@@ -574,6 +595,7 @@ class _$SignOutException implements SignOutException {
     required TResult Function(SignOutException value) signOutException,
     required TResult Function(ResetPasswordException value) resetPassword,
     required TResult Function(UpdateProfileException value) updateProfile,
+    required TResult Function(ProductsFetchException value) productsFetch,
   }) {
     return signOutException(this);
   }
@@ -586,6 +608,7 @@ class _$SignOutException implements SignOutException {
     TResult Function(SignOutException value)? signOutException,
     TResult Function(ResetPasswordException value)? resetPassword,
     TResult Function(UpdateProfileException value)? updateProfile,
+    TResult Function(ProductsFetchException value)? productsFetch,
   }) {
     return signOutException?.call(this);
   }
@@ -598,6 +621,7 @@ class _$SignOutException implements SignOutException {
     TResult Function(SignOutException value)? signOutException,
     TResult Function(ResetPasswordException value)? resetPassword,
     TResult Function(UpdateProfileException value)? updateProfile,
+    TResult Function(ProductsFetchException value)? productsFetch,
     required TResult orElse(),
   }) {
     if (signOutException != null) {
@@ -705,6 +729,7 @@ class _$ResetPasswordException implements ResetPasswordException {
     required TResult Function(String message, String? devLogs) signOutException,
     required TResult Function(String message, String? devLogs) resetPassword,
     required TResult Function(String message, String? devLogs) updateProfile,
+    required TResult Function(String message, String? devLogs) productsFetch,
   }) {
     return resetPassword(message, devLogs);
   }
@@ -717,6 +742,7 @@ class _$ResetPasswordException implements ResetPasswordException {
     TResult Function(String message, String? devLogs)? signOutException,
     TResult Function(String message, String? devLogs)? resetPassword,
     TResult Function(String message, String? devLogs)? updateProfile,
+    TResult Function(String message, String? devLogs)? productsFetch,
   }) {
     return resetPassword?.call(message, devLogs);
   }
@@ -729,6 +755,7 @@ class _$ResetPasswordException implements ResetPasswordException {
     TResult Function(String message, String? devLogs)? signOutException,
     TResult Function(String message, String? devLogs)? resetPassword,
     TResult Function(String message, String? devLogs)? updateProfile,
+    TResult Function(String message, String? devLogs)? productsFetch,
     required TResult orElse(),
   }) {
     if (resetPassword != null) {
@@ -745,6 +772,7 @@ class _$ResetPasswordException implements ResetPasswordException {
     required TResult Function(SignOutException value) signOutException,
     required TResult Function(ResetPasswordException value) resetPassword,
     required TResult Function(UpdateProfileException value) updateProfile,
+    required TResult Function(ProductsFetchException value) productsFetch,
   }) {
     return resetPassword(this);
   }
@@ -757,6 +785,7 @@ class _$ResetPasswordException implements ResetPasswordException {
     TResult Function(SignOutException value)? signOutException,
     TResult Function(ResetPasswordException value)? resetPassword,
     TResult Function(UpdateProfileException value)? updateProfile,
+    TResult Function(ProductsFetchException value)? productsFetch,
   }) {
     return resetPassword?.call(this);
   }
@@ -769,6 +798,7 @@ class _$ResetPasswordException implements ResetPasswordException {
     TResult Function(SignOutException value)? signOutException,
     TResult Function(ResetPasswordException value)? resetPassword,
     TResult Function(UpdateProfileException value)? updateProfile,
+    TResult Function(ProductsFetchException value)? productsFetch,
     required TResult orElse(),
   }) {
     if (resetPassword != null) {
@@ -876,6 +906,7 @@ class _$UpdateProfileException implements UpdateProfileException {
     required TResult Function(String message, String? devLogs) signOutException,
     required TResult Function(String message, String? devLogs) resetPassword,
     required TResult Function(String message, String? devLogs) updateProfile,
+    required TResult Function(String message, String? devLogs) productsFetch,
   }) {
     return updateProfile(message, devLogs);
   }
@@ -888,6 +919,7 @@ class _$UpdateProfileException implements UpdateProfileException {
     TResult Function(String message, String? devLogs)? signOutException,
     TResult Function(String message, String? devLogs)? resetPassword,
     TResult Function(String message, String? devLogs)? updateProfile,
+    TResult Function(String message, String? devLogs)? productsFetch,
   }) {
     return updateProfile?.call(message, devLogs);
   }
@@ -900,6 +932,7 @@ class _$UpdateProfileException implements UpdateProfileException {
     TResult Function(String message, String? devLogs)? signOutException,
     TResult Function(String message, String? devLogs)? resetPassword,
     TResult Function(String message, String? devLogs)? updateProfile,
+    TResult Function(String message, String? devLogs)? productsFetch,
     required TResult orElse(),
   }) {
     if (updateProfile != null) {
@@ -916,6 +949,7 @@ class _$UpdateProfileException implements UpdateProfileException {
     required TResult Function(SignOutException value) signOutException,
     required TResult Function(ResetPasswordException value) resetPassword,
     required TResult Function(UpdateProfileException value) updateProfile,
+    required TResult Function(ProductsFetchException value) productsFetch,
   }) {
     return updateProfile(this);
   }
@@ -928,6 +962,7 @@ class _$UpdateProfileException implements UpdateProfileException {
     TResult Function(SignOutException value)? signOutException,
     TResult Function(ResetPasswordException value)? resetPassword,
     TResult Function(UpdateProfileException value)? updateProfile,
+    TResult Function(ProductsFetchException value)? productsFetch,
   }) {
     return updateProfile?.call(this);
   }
@@ -940,6 +975,7 @@ class _$UpdateProfileException implements UpdateProfileException {
     TResult Function(SignOutException value)? signOutException,
     TResult Function(ResetPasswordException value)? resetPassword,
     TResult Function(UpdateProfileException value)? updateProfile,
+    TResult Function(ProductsFetchException value)? productsFetch,
     required TResult orElse(),
   }) {
     if (updateProfile != null) {
@@ -960,5 +996,182 @@ abstract class UpdateProfileException implements Exceptions {
   @override
   @JsonKey(ignore: true)
   _$$UpdateProfileExceptionCopyWith<_$UpdateProfileException> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ProductsFetchExceptionCopyWith<$Res>
+    implements $ExceptionsCopyWith<$Res> {
+  factory _$$ProductsFetchExceptionCopyWith(_$ProductsFetchException value,
+          $Res Function(_$ProductsFetchException) then) =
+      __$$ProductsFetchExceptionCopyWithImpl<$Res>;
+  @override
+  $Res call({String message, String? devLogs});
+}
+
+/// @nodoc
+class __$$ProductsFetchExceptionCopyWithImpl<$Res>
+    extends _$ExceptionsCopyWithImpl<$Res>
+    implements _$$ProductsFetchExceptionCopyWith<$Res> {
+  __$$ProductsFetchExceptionCopyWithImpl(_$ProductsFetchException _value,
+      $Res Function(_$ProductsFetchException) _then)
+      : super(_value, (v) => _then(v as _$ProductsFetchException));
+
+  @override
+  _$ProductsFetchException get _value =>
+      super._value as _$ProductsFetchException;
+
+  @override
+  $Res call({
+    Object? message = freezed,
+    Object? devLogs = freezed,
+  }) {
+    return _then(_$ProductsFetchException(
+      message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+      devLogs == freezed
+          ? _value.devLogs
+          : devLogs // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ProductsFetchException implements ProductsFetchException {
+  const _$ProductsFetchException(this.message, [this.devLogs]);
+
+  @override
+  final String message;
+  @override
+  final String? devLogs;
+
+  @override
+  String toString() {
+    return 'Exceptions.productsFetch(message: $message, devLogs: $devLogs)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ProductsFetchException &&
+            const DeepCollectionEquality().equals(other.message, message) &&
+            const DeepCollectionEquality().equals(other.devLogs, devLogs));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(message),
+      const DeepCollectionEquality().hash(devLogs));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$ProductsFetchExceptionCopyWith<_$ProductsFetchException> get copyWith =>
+      __$$ProductsFetchExceptionCopyWithImpl<_$ProductsFetchException>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String message, String? devLogs) loginException,
+    required TResult Function(String message, String? devLogs) signUpException,
+    required TResult Function(String message, String? devLogs) signOutException,
+    required TResult Function(String message, String? devLogs) resetPassword,
+    required TResult Function(String message, String? devLogs) updateProfile,
+    required TResult Function(String message, String? devLogs) productsFetch,
+  }) {
+    return productsFetch(message, devLogs);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message, String? devLogs)? loginException,
+    TResult Function(String message, String? devLogs)? signUpException,
+    TResult Function(String message, String? devLogs)? signOutException,
+    TResult Function(String message, String? devLogs)? resetPassword,
+    TResult Function(String message, String? devLogs)? updateProfile,
+    TResult Function(String message, String? devLogs)? productsFetch,
+  }) {
+    return productsFetch?.call(message, devLogs);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message, String? devLogs)? loginException,
+    TResult Function(String message, String? devLogs)? signUpException,
+    TResult Function(String message, String? devLogs)? signOutException,
+    TResult Function(String message, String? devLogs)? resetPassword,
+    TResult Function(String message, String? devLogs)? updateProfile,
+    TResult Function(String message, String? devLogs)? productsFetch,
+    required TResult orElse(),
+  }) {
+    if (productsFetch != null) {
+      return productsFetch(message, devLogs);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoginException value) loginException,
+    required TResult Function(SignUpException value) signUpException,
+    required TResult Function(SignOutException value) signOutException,
+    required TResult Function(ResetPasswordException value) resetPassword,
+    required TResult Function(UpdateProfileException value) updateProfile,
+    required TResult Function(ProductsFetchException value) productsFetch,
+  }) {
+    return productsFetch(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LoginException value)? loginException,
+    TResult Function(SignUpException value)? signUpException,
+    TResult Function(SignOutException value)? signOutException,
+    TResult Function(ResetPasswordException value)? resetPassword,
+    TResult Function(UpdateProfileException value)? updateProfile,
+    TResult Function(ProductsFetchException value)? productsFetch,
+  }) {
+    return productsFetch?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoginException value)? loginException,
+    TResult Function(SignUpException value)? signUpException,
+    TResult Function(SignOutException value)? signOutException,
+    TResult Function(ResetPasswordException value)? resetPassword,
+    TResult Function(UpdateProfileException value)? updateProfile,
+    TResult Function(ProductsFetchException value)? productsFetch,
+    required TResult orElse(),
+  }) {
+    if (productsFetch != null) {
+      return productsFetch(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ProductsFetchException implements Exceptions {
+  const factory ProductsFetchException(final String message,
+      [final String? devLogs]) = _$ProductsFetchException;
+
+  @override
+  String get message;
+  @override
+  String? get devLogs;
+  @override
+  @JsonKey(ignore: true)
+  _$$ProductsFetchExceptionCopyWith<_$ProductsFetchException> get copyWith =>
       throw _privateConstructorUsedError;
 }
