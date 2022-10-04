@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:suntech_it_e_com_app/core/constants/app_constants.dart';
 
 ///This widget is used to create the selected icon in bottom navigation bar
 class SelectedIconWidget extends StatelessWidget {
@@ -14,11 +15,8 @@ class SelectedIconWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         decoration: BoxDecoration(
-            gradient: const LinearGradient(
-              colors: [
-                Color(0xff4FBBE3),
-                Color(0xff4E5BB3),
-              ],
+            gradient: LinearGradient(
+              colors: AppConstants.gradientColors,
             ),
             borderRadius: BorderRadius.circular(8.h)),
         padding: EdgeInsets.symmetric(

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:suntech_it_e_com_app/app/bloc/app_bloc.dart';
 import 'package:suntech_it_e_com_app/core/constants/app_constants.dart';
 import 'package:suntech_it_e_com_app/core/widgets/custom_widgets.dart';
 import 'package:suntech_it_e_com_app/features/home/presentation/pages/home_page.dart';
@@ -34,13 +33,6 @@ class _MainPageState extends State<MainPage> {
         highlightColor: Colors.transparent,
       ),
       child: AppBackgroundCustom(
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            context.addAppEvent(const AppEvent.logoutRequested());
-          },
-          tooltip: "Logout",
-          child: const Icon(Icons.snowing),
-        ),
         appBar: AppBarCustom(
           leadingWidget: IconButton(
             onPressed: () {},
