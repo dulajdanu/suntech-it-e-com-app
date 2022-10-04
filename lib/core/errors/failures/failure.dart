@@ -20,4 +20,8 @@ class Failure with _$Failure {
   ///ResetPasswordFailure is returned when there is a exception in reset password
 
   const factory Failure.resetPassword(String message) = ResetPasswordFailure;
+
+  ///returned when there is a update profile exception
+
+  const factory Failure.updateProfile(String message) = UpdateProfileFailure;
 }

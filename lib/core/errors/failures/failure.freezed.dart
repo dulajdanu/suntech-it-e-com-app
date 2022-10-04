@@ -24,6 +24,7 @@ mixin _$Failure {
     required TResult Function(String message) signOutFailure,
     required TResult Function(String message) cacheFailure,
     required TResult Function(String message) resetPassword,
+    required TResult Function(String message) updateProfile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -33,6 +34,7 @@ mixin _$Failure {
     TResult Function(String message)? signOutFailure,
     TResult Function(String message)? cacheFailure,
     TResult Function(String message)? resetPassword,
+    TResult Function(String message)? updateProfile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -42,6 +44,7 @@ mixin _$Failure {
     TResult Function(String message)? signOutFailure,
     TResult Function(String message)? cacheFailure,
     TResult Function(String message)? resetPassword,
+    TResult Function(String message)? updateProfile,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -52,6 +55,7 @@ mixin _$Failure {
     required TResult Function(SignOutFailure value) signOutFailure,
     required TResult Function(CacheFailure value) cacheFailure,
     required TResult Function(ResetPasswordFailure value) resetPassword,
+    required TResult Function(UpdateProfileFailure value) updateProfile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -61,6 +65,7 @@ mixin _$Failure {
     TResult Function(SignOutFailure value)? signOutFailure,
     TResult Function(CacheFailure value)? cacheFailure,
     TResult Function(ResetPasswordFailure value)? resetPassword,
+    TResult Function(UpdateProfileFailure value)? updateProfile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -70,6 +75,7 @@ mixin _$Failure {
     TResult Function(SignOutFailure value)? signOutFailure,
     TResult Function(CacheFailure value)? cacheFailure,
     TResult Function(ResetPasswordFailure value)? resetPassword,
+    TResult Function(UpdateProfileFailure value)? updateProfile,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -176,6 +182,7 @@ class _$LoginFailure implements LoginFailure {
     required TResult Function(String message) signOutFailure,
     required TResult Function(String message) cacheFailure,
     required TResult Function(String message) resetPassword,
+    required TResult Function(String message) updateProfile,
   }) {
     return login(message);
   }
@@ -188,6 +195,7 @@ class _$LoginFailure implements LoginFailure {
     TResult Function(String message)? signOutFailure,
     TResult Function(String message)? cacheFailure,
     TResult Function(String message)? resetPassword,
+    TResult Function(String message)? updateProfile,
   }) {
     return login?.call(message);
   }
@@ -200,6 +208,7 @@ class _$LoginFailure implements LoginFailure {
     TResult Function(String message)? signOutFailure,
     TResult Function(String message)? cacheFailure,
     TResult Function(String message)? resetPassword,
+    TResult Function(String message)? updateProfile,
     required TResult orElse(),
   }) {
     if (login != null) {
@@ -216,6 +225,7 @@ class _$LoginFailure implements LoginFailure {
     required TResult Function(SignOutFailure value) signOutFailure,
     required TResult Function(CacheFailure value) cacheFailure,
     required TResult Function(ResetPasswordFailure value) resetPassword,
+    required TResult Function(UpdateProfileFailure value) updateProfile,
   }) {
     return login(this);
   }
@@ -228,6 +238,7 @@ class _$LoginFailure implements LoginFailure {
     TResult Function(SignOutFailure value)? signOutFailure,
     TResult Function(CacheFailure value)? cacheFailure,
     TResult Function(ResetPasswordFailure value)? resetPassword,
+    TResult Function(UpdateProfileFailure value)? updateProfile,
   }) {
     return login?.call(this);
   }
@@ -240,6 +251,7 @@ class _$LoginFailure implements LoginFailure {
     TResult Function(SignOutFailure value)? signOutFailure,
     TResult Function(CacheFailure value)? cacheFailure,
     TResult Function(ResetPasswordFailure value)? resetPassword,
+    TResult Function(UpdateProfileFailure value)? updateProfile,
     required TResult orElse(),
   }) {
     if (login != null) {
@@ -331,6 +343,7 @@ class _$SignUpFailure implements SignUpFailure {
     required TResult Function(String message) signOutFailure,
     required TResult Function(String message) cacheFailure,
     required TResult Function(String message) resetPassword,
+    required TResult Function(String message) updateProfile,
   }) {
     return signUp(message);
   }
@@ -343,6 +356,7 @@ class _$SignUpFailure implements SignUpFailure {
     TResult Function(String message)? signOutFailure,
     TResult Function(String message)? cacheFailure,
     TResult Function(String message)? resetPassword,
+    TResult Function(String message)? updateProfile,
   }) {
     return signUp?.call(message);
   }
@@ -355,6 +369,7 @@ class _$SignUpFailure implements SignUpFailure {
     TResult Function(String message)? signOutFailure,
     TResult Function(String message)? cacheFailure,
     TResult Function(String message)? resetPassword,
+    TResult Function(String message)? updateProfile,
     required TResult orElse(),
   }) {
     if (signUp != null) {
@@ -371,6 +386,7 @@ class _$SignUpFailure implements SignUpFailure {
     required TResult Function(SignOutFailure value) signOutFailure,
     required TResult Function(CacheFailure value) cacheFailure,
     required TResult Function(ResetPasswordFailure value) resetPassword,
+    required TResult Function(UpdateProfileFailure value) updateProfile,
   }) {
     return signUp(this);
   }
@@ -383,6 +399,7 @@ class _$SignUpFailure implements SignUpFailure {
     TResult Function(SignOutFailure value)? signOutFailure,
     TResult Function(CacheFailure value)? cacheFailure,
     TResult Function(ResetPasswordFailure value)? resetPassword,
+    TResult Function(UpdateProfileFailure value)? updateProfile,
   }) {
     return signUp?.call(this);
   }
@@ -395,6 +412,7 @@ class _$SignUpFailure implements SignUpFailure {
     TResult Function(SignOutFailure value)? signOutFailure,
     TResult Function(CacheFailure value)? cacheFailure,
     TResult Function(ResetPasswordFailure value)? resetPassword,
+    TResult Function(UpdateProfileFailure value)? updateProfile,
     required TResult orElse(),
   }) {
     if (signUp != null) {
@@ -486,6 +504,7 @@ class _$SignOutFailure implements SignOutFailure {
     required TResult Function(String message) signOutFailure,
     required TResult Function(String message) cacheFailure,
     required TResult Function(String message) resetPassword,
+    required TResult Function(String message) updateProfile,
   }) {
     return signOutFailure(message);
   }
@@ -498,6 +517,7 @@ class _$SignOutFailure implements SignOutFailure {
     TResult Function(String message)? signOutFailure,
     TResult Function(String message)? cacheFailure,
     TResult Function(String message)? resetPassword,
+    TResult Function(String message)? updateProfile,
   }) {
     return signOutFailure?.call(message);
   }
@@ -510,6 +530,7 @@ class _$SignOutFailure implements SignOutFailure {
     TResult Function(String message)? signOutFailure,
     TResult Function(String message)? cacheFailure,
     TResult Function(String message)? resetPassword,
+    TResult Function(String message)? updateProfile,
     required TResult orElse(),
   }) {
     if (signOutFailure != null) {
@@ -526,6 +547,7 @@ class _$SignOutFailure implements SignOutFailure {
     required TResult Function(SignOutFailure value) signOutFailure,
     required TResult Function(CacheFailure value) cacheFailure,
     required TResult Function(ResetPasswordFailure value) resetPassword,
+    required TResult Function(UpdateProfileFailure value) updateProfile,
   }) {
     return signOutFailure(this);
   }
@@ -538,6 +560,7 @@ class _$SignOutFailure implements SignOutFailure {
     TResult Function(SignOutFailure value)? signOutFailure,
     TResult Function(CacheFailure value)? cacheFailure,
     TResult Function(ResetPasswordFailure value)? resetPassword,
+    TResult Function(UpdateProfileFailure value)? updateProfile,
   }) {
     return signOutFailure?.call(this);
   }
@@ -550,6 +573,7 @@ class _$SignOutFailure implements SignOutFailure {
     TResult Function(SignOutFailure value)? signOutFailure,
     TResult Function(CacheFailure value)? cacheFailure,
     TResult Function(ResetPasswordFailure value)? resetPassword,
+    TResult Function(UpdateProfileFailure value)? updateProfile,
     required TResult orElse(),
   }) {
     if (signOutFailure != null) {
@@ -640,6 +664,7 @@ class _$CacheFailure implements CacheFailure {
     required TResult Function(String message) signOutFailure,
     required TResult Function(String message) cacheFailure,
     required TResult Function(String message) resetPassword,
+    required TResult Function(String message) updateProfile,
   }) {
     return cacheFailure(message);
   }
@@ -652,6 +677,7 @@ class _$CacheFailure implements CacheFailure {
     TResult Function(String message)? signOutFailure,
     TResult Function(String message)? cacheFailure,
     TResult Function(String message)? resetPassword,
+    TResult Function(String message)? updateProfile,
   }) {
     return cacheFailure?.call(message);
   }
@@ -664,6 +690,7 @@ class _$CacheFailure implements CacheFailure {
     TResult Function(String message)? signOutFailure,
     TResult Function(String message)? cacheFailure,
     TResult Function(String message)? resetPassword,
+    TResult Function(String message)? updateProfile,
     required TResult orElse(),
   }) {
     if (cacheFailure != null) {
@@ -680,6 +707,7 @@ class _$CacheFailure implements CacheFailure {
     required TResult Function(SignOutFailure value) signOutFailure,
     required TResult Function(CacheFailure value) cacheFailure,
     required TResult Function(ResetPasswordFailure value) resetPassword,
+    required TResult Function(UpdateProfileFailure value) updateProfile,
   }) {
     return cacheFailure(this);
   }
@@ -692,6 +720,7 @@ class _$CacheFailure implements CacheFailure {
     TResult Function(SignOutFailure value)? signOutFailure,
     TResult Function(CacheFailure value)? cacheFailure,
     TResult Function(ResetPasswordFailure value)? resetPassword,
+    TResult Function(UpdateProfileFailure value)? updateProfile,
   }) {
     return cacheFailure?.call(this);
   }
@@ -704,6 +733,7 @@ class _$CacheFailure implements CacheFailure {
     TResult Function(SignOutFailure value)? signOutFailure,
     TResult Function(CacheFailure value)? cacheFailure,
     TResult Function(ResetPasswordFailure value)? resetPassword,
+    TResult Function(UpdateProfileFailure value)? updateProfile,
     required TResult orElse(),
   }) {
     if (cacheFailure != null) {
@@ -797,6 +827,7 @@ class _$ResetPasswordFailure implements ResetPasswordFailure {
     required TResult Function(String message) signOutFailure,
     required TResult Function(String message) cacheFailure,
     required TResult Function(String message) resetPassword,
+    required TResult Function(String message) updateProfile,
   }) {
     return resetPassword(message);
   }
@@ -809,6 +840,7 @@ class _$ResetPasswordFailure implements ResetPasswordFailure {
     TResult Function(String message)? signOutFailure,
     TResult Function(String message)? cacheFailure,
     TResult Function(String message)? resetPassword,
+    TResult Function(String message)? updateProfile,
   }) {
     return resetPassword?.call(message);
   }
@@ -821,6 +853,7 @@ class _$ResetPasswordFailure implements ResetPasswordFailure {
     TResult Function(String message)? signOutFailure,
     TResult Function(String message)? cacheFailure,
     TResult Function(String message)? resetPassword,
+    TResult Function(String message)? updateProfile,
     required TResult orElse(),
   }) {
     if (resetPassword != null) {
@@ -837,6 +870,7 @@ class _$ResetPasswordFailure implements ResetPasswordFailure {
     required TResult Function(SignOutFailure value) signOutFailure,
     required TResult Function(CacheFailure value) cacheFailure,
     required TResult Function(ResetPasswordFailure value) resetPassword,
+    required TResult Function(UpdateProfileFailure value) updateProfile,
   }) {
     return resetPassword(this);
   }
@@ -849,6 +883,7 @@ class _$ResetPasswordFailure implements ResetPasswordFailure {
     TResult Function(SignOutFailure value)? signOutFailure,
     TResult Function(CacheFailure value)? cacheFailure,
     TResult Function(ResetPasswordFailure value)? resetPassword,
+    TResult Function(UpdateProfileFailure value)? updateProfile,
   }) {
     return resetPassword?.call(this);
   }
@@ -861,6 +896,7 @@ class _$ResetPasswordFailure implements ResetPasswordFailure {
     TResult Function(SignOutFailure value)? signOutFailure,
     TResult Function(CacheFailure value)? cacheFailure,
     TResult Function(ResetPasswordFailure value)? resetPassword,
+    TResult Function(UpdateProfileFailure value)? updateProfile,
     required TResult orElse(),
   }) {
     if (resetPassword != null) {
@@ -879,5 +915,169 @@ abstract class ResetPasswordFailure implements Failure {
   @override
   @JsonKey(ignore: true)
   _$$ResetPasswordFailureCopyWith<_$ResetPasswordFailure> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateProfileFailureCopyWith<$Res>
+    implements $FailureCopyWith<$Res> {
+  factory _$$UpdateProfileFailureCopyWith(_$UpdateProfileFailure value,
+          $Res Function(_$UpdateProfileFailure) then) =
+      __$$UpdateProfileFailureCopyWithImpl<$Res>;
+  @override
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$UpdateProfileFailureCopyWithImpl<$Res>
+    extends _$FailureCopyWithImpl<$Res>
+    implements _$$UpdateProfileFailureCopyWith<$Res> {
+  __$$UpdateProfileFailureCopyWithImpl(_$UpdateProfileFailure _value,
+      $Res Function(_$UpdateProfileFailure) _then)
+      : super(_value, (v) => _then(v as _$UpdateProfileFailure));
+
+  @override
+  _$UpdateProfileFailure get _value => super._value as _$UpdateProfileFailure;
+
+  @override
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(_$UpdateProfileFailure(
+      message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateProfileFailure implements UpdateProfileFailure {
+  const _$UpdateProfileFailure(this.message);
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'Failure.updateProfile(message: $message)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateProfileFailure &&
+            const DeepCollectionEquality().equals(other.message, message));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$UpdateProfileFailureCopyWith<_$UpdateProfileFailure> get copyWith =>
+      __$$UpdateProfileFailureCopyWithImpl<_$UpdateProfileFailure>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String message) login,
+    required TResult Function(String message) signUp,
+    required TResult Function(String message) signOutFailure,
+    required TResult Function(String message) cacheFailure,
+    required TResult Function(String message) resetPassword,
+    required TResult Function(String message) updateProfile,
+  }) {
+    return updateProfile(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message)? login,
+    TResult Function(String message)? signUp,
+    TResult Function(String message)? signOutFailure,
+    TResult Function(String message)? cacheFailure,
+    TResult Function(String message)? resetPassword,
+    TResult Function(String message)? updateProfile,
+  }) {
+    return updateProfile?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message)? login,
+    TResult Function(String message)? signUp,
+    TResult Function(String message)? signOutFailure,
+    TResult Function(String message)? cacheFailure,
+    TResult Function(String message)? resetPassword,
+    TResult Function(String message)? updateProfile,
+    required TResult orElse(),
+  }) {
+    if (updateProfile != null) {
+      return updateProfile(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoginFailure value) login,
+    required TResult Function(SignUpFailure value) signUp,
+    required TResult Function(SignOutFailure value) signOutFailure,
+    required TResult Function(CacheFailure value) cacheFailure,
+    required TResult Function(ResetPasswordFailure value) resetPassword,
+    required TResult Function(UpdateProfileFailure value) updateProfile,
+  }) {
+    return updateProfile(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LoginFailure value)? login,
+    TResult Function(SignUpFailure value)? signUp,
+    TResult Function(SignOutFailure value)? signOutFailure,
+    TResult Function(CacheFailure value)? cacheFailure,
+    TResult Function(ResetPasswordFailure value)? resetPassword,
+    TResult Function(UpdateProfileFailure value)? updateProfile,
+  }) {
+    return updateProfile?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoginFailure value)? login,
+    TResult Function(SignUpFailure value)? signUp,
+    TResult Function(SignOutFailure value)? signOutFailure,
+    TResult Function(CacheFailure value)? cacheFailure,
+    TResult Function(ResetPasswordFailure value)? resetPassword,
+    TResult Function(UpdateProfileFailure value)? updateProfile,
+    required TResult orElse(),
+  }) {
+    if (updateProfile != null) {
+      return updateProfile(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateProfileFailure implements Failure {
+  const factory UpdateProfileFailure(final String message) =
+      _$UpdateProfileFailure;
+
+  @override
+  String get message;
+  @override
+  @JsonKey(ignore: true)
+  _$$UpdateProfileFailureCopyWith<_$UpdateProfileFailure> get copyWith =>
       throw _privateConstructorUsedError;
 }

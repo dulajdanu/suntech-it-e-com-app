@@ -6,4 +6,6 @@ import 'package:suntech_it_e_com_app/features/auth/auth_form_models/email/email.
 abstract class ResetPasswordRepository {
   ///As the result we get a response model and a string which is the state
   RvfEither<Tuple2<ResponseModel, String>> resetPassword(Email email);
+
+  RvfEither<String> confirmPasswordReset(String otp, String state);
 }

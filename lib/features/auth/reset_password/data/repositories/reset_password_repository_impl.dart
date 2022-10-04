@@ -21,4 +21,15 @@ class ResetPasswordRepsitoryImpl implements ResetPasswordRepository {
       return left(Failure.resetPassword(e.message));
     }
   }
+
+  @override
+  RvfEither<String> confirmPasswordReset(String otp, String state) async {
+    try {
+      final result =
+          await _resetPasswordDatasource.confirmPasswordReset(otp, state);
+      return right(result);
+    } on ResetPasswordException catch (e) {
+      return left(Failure.resetPassword(e.message));
+    }
+  }
 }

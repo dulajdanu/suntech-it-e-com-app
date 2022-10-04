@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:suntech_it_e_com_app/core/data/repositories/user_data_repository.dart';
 import 'package:suntech_it_e_com_app/core/service_locators/service_locator.dart';
 import 'package:suntech_it_e_com_app/features/auth/reset_password/cubit/reset_password_cubit.dart';
 import 'package:suntech_it_e_com_app/features/auth/reset_password/data/repositories/reset_password_repository.dart';
@@ -12,7 +13,8 @@ class ResetPasswordPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => ResetPasswordCubit(
-          resetPasswordRepository: serviceLocator<ResetPasswordRepository>()),
+          resetPasswordRepository: serviceLocator<ResetPasswordRepository>(),
+          userDataRepository: serviceLocator<UserDataRepository>()),
       child: const ResetPasswordView(),
     );
   }

@@ -5,4 +5,6 @@ import 'package:suntech_it_e_com_app/features/auth/auth_form_models/email/email.
 
 abstract class ResetPasswordDatasource {
   Rvf<Tuple2<ResponseModel, String>> resetPassword(Email email);
+
+  Rvf<String> confirmPasswordReset(String otp, String state);
 }

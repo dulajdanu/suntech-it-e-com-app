@@ -24,6 +24,7 @@ mixin _$Exceptions {
     required TResult Function(String message, String? devLogs) signUpException,
     required TResult Function(String message, String? devLogs) signOutException,
     required TResult Function(String message, String? devLogs) resetPassword,
+    required TResult Function(String message, String? devLogs) updateProfile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +33,7 @@ mixin _$Exceptions {
     TResult Function(String message, String? devLogs)? signUpException,
     TResult Function(String message, String? devLogs)? signOutException,
     TResult Function(String message, String? devLogs)? resetPassword,
+    TResult Function(String message, String? devLogs)? updateProfile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -40,6 +42,7 @@ mixin _$Exceptions {
     TResult Function(String message, String? devLogs)? signUpException,
     TResult Function(String message, String? devLogs)? signOutException,
     TResult Function(String message, String? devLogs)? resetPassword,
+    TResult Function(String message, String? devLogs)? updateProfile,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -49,6 +52,7 @@ mixin _$Exceptions {
     required TResult Function(SignUpException value) signUpException,
     required TResult Function(SignOutException value) signOutException,
     required TResult Function(ResetPasswordException value) resetPassword,
+    required TResult Function(UpdateProfileException value) updateProfile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +61,7 @@ mixin _$Exceptions {
     TResult Function(SignUpException value)? signUpException,
     TResult Function(SignOutException value)? signOutException,
     TResult Function(ResetPasswordException value)? resetPassword,
+    TResult Function(UpdateProfileException value)? updateProfile,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,6 +70,7 @@ mixin _$Exceptions {
     TResult Function(SignUpException value)? signUpException,
     TResult Function(SignOutException value)? signOutException,
     TResult Function(ResetPasswordException value)? resetPassword,
+    TResult Function(UpdateProfileException value)? updateProfile,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -189,6 +195,7 @@ class _$LoginException implements LoginException {
     required TResult Function(String message, String? devLogs) signUpException,
     required TResult Function(String message, String? devLogs) signOutException,
     required TResult Function(String message, String? devLogs) resetPassword,
+    required TResult Function(String message, String? devLogs) updateProfile,
   }) {
     return loginException(message, devLogs);
   }
@@ -200,6 +207,7 @@ class _$LoginException implements LoginException {
     TResult Function(String message, String? devLogs)? signUpException,
     TResult Function(String message, String? devLogs)? signOutException,
     TResult Function(String message, String? devLogs)? resetPassword,
+    TResult Function(String message, String? devLogs)? updateProfile,
   }) {
     return loginException?.call(message, devLogs);
   }
@@ -211,6 +219,7 @@ class _$LoginException implements LoginException {
     TResult Function(String message, String? devLogs)? signUpException,
     TResult Function(String message, String? devLogs)? signOutException,
     TResult Function(String message, String? devLogs)? resetPassword,
+    TResult Function(String message, String? devLogs)? updateProfile,
     required TResult orElse(),
   }) {
     if (loginException != null) {
@@ -226,6 +235,7 @@ class _$LoginException implements LoginException {
     required TResult Function(SignUpException value) signUpException,
     required TResult Function(SignOutException value) signOutException,
     required TResult Function(ResetPasswordException value) resetPassword,
+    required TResult Function(UpdateProfileException value) updateProfile,
   }) {
     return loginException(this);
   }
@@ -237,6 +247,7 @@ class _$LoginException implements LoginException {
     TResult Function(SignUpException value)? signUpException,
     TResult Function(SignOutException value)? signOutException,
     TResult Function(ResetPasswordException value)? resetPassword,
+    TResult Function(UpdateProfileException value)? updateProfile,
   }) {
     return loginException?.call(this);
   }
@@ -248,6 +259,7 @@ class _$LoginException implements LoginException {
     TResult Function(SignUpException value)? signUpException,
     TResult Function(SignOutException value)? signOutException,
     TResult Function(ResetPasswordException value)? resetPassword,
+    TResult Function(UpdateProfileException value)? updateProfile,
     required TResult orElse(),
   }) {
     if (loginException != null) {
@@ -352,6 +364,7 @@ class _$SignUpException implements SignUpException {
     required TResult Function(String message, String? devLogs) signUpException,
     required TResult Function(String message, String? devLogs) signOutException,
     required TResult Function(String message, String? devLogs) resetPassword,
+    required TResult Function(String message, String? devLogs) updateProfile,
   }) {
     return signUpException(message, devLogs);
   }
@@ -363,6 +376,7 @@ class _$SignUpException implements SignUpException {
     TResult Function(String message, String? devLogs)? signUpException,
     TResult Function(String message, String? devLogs)? signOutException,
     TResult Function(String message, String? devLogs)? resetPassword,
+    TResult Function(String message, String? devLogs)? updateProfile,
   }) {
     return signUpException?.call(message, devLogs);
   }
@@ -374,6 +388,7 @@ class _$SignUpException implements SignUpException {
     TResult Function(String message, String? devLogs)? signUpException,
     TResult Function(String message, String? devLogs)? signOutException,
     TResult Function(String message, String? devLogs)? resetPassword,
+    TResult Function(String message, String? devLogs)? updateProfile,
     required TResult orElse(),
   }) {
     if (signUpException != null) {
@@ -389,6 +404,7 @@ class _$SignUpException implements SignUpException {
     required TResult Function(SignUpException value) signUpException,
     required TResult Function(SignOutException value) signOutException,
     required TResult Function(ResetPasswordException value) resetPassword,
+    required TResult Function(UpdateProfileException value) updateProfile,
   }) {
     return signUpException(this);
   }
@@ -400,6 +416,7 @@ class _$SignUpException implements SignUpException {
     TResult Function(SignUpException value)? signUpException,
     TResult Function(SignOutException value)? signOutException,
     TResult Function(ResetPasswordException value)? resetPassword,
+    TResult Function(UpdateProfileException value)? updateProfile,
   }) {
     return signUpException?.call(this);
   }
@@ -411,6 +428,7 @@ class _$SignUpException implements SignUpException {
     TResult Function(SignUpException value)? signUpException,
     TResult Function(SignOutException value)? signOutException,
     TResult Function(ResetPasswordException value)? resetPassword,
+    TResult Function(UpdateProfileException value)? updateProfile,
     required TResult orElse(),
   }) {
     if (signUpException != null) {
@@ -515,6 +533,7 @@ class _$SignOutException implements SignOutException {
     required TResult Function(String message, String? devLogs) signUpException,
     required TResult Function(String message, String? devLogs) signOutException,
     required TResult Function(String message, String? devLogs) resetPassword,
+    required TResult Function(String message, String? devLogs) updateProfile,
   }) {
     return signOutException(message, devLogs);
   }
@@ -526,6 +545,7 @@ class _$SignOutException implements SignOutException {
     TResult Function(String message, String? devLogs)? signUpException,
     TResult Function(String message, String? devLogs)? signOutException,
     TResult Function(String message, String? devLogs)? resetPassword,
+    TResult Function(String message, String? devLogs)? updateProfile,
   }) {
     return signOutException?.call(message, devLogs);
   }
@@ -537,6 +557,7 @@ class _$SignOutException implements SignOutException {
     TResult Function(String message, String? devLogs)? signUpException,
     TResult Function(String message, String? devLogs)? signOutException,
     TResult Function(String message, String? devLogs)? resetPassword,
+    TResult Function(String message, String? devLogs)? updateProfile,
     required TResult orElse(),
   }) {
     if (signOutException != null) {
@@ -552,6 +573,7 @@ class _$SignOutException implements SignOutException {
     required TResult Function(SignUpException value) signUpException,
     required TResult Function(SignOutException value) signOutException,
     required TResult Function(ResetPasswordException value) resetPassword,
+    required TResult Function(UpdateProfileException value) updateProfile,
   }) {
     return signOutException(this);
   }
@@ -563,6 +585,7 @@ class _$SignOutException implements SignOutException {
     TResult Function(SignUpException value)? signUpException,
     TResult Function(SignOutException value)? signOutException,
     TResult Function(ResetPasswordException value)? resetPassword,
+    TResult Function(UpdateProfileException value)? updateProfile,
   }) {
     return signOutException?.call(this);
   }
@@ -574,6 +597,7 @@ class _$SignOutException implements SignOutException {
     TResult Function(SignUpException value)? signUpException,
     TResult Function(SignOutException value)? signOutException,
     TResult Function(ResetPasswordException value)? resetPassword,
+    TResult Function(UpdateProfileException value)? updateProfile,
     required TResult orElse(),
   }) {
     if (signOutException != null) {
@@ -680,6 +704,7 @@ class _$ResetPasswordException implements ResetPasswordException {
     required TResult Function(String message, String? devLogs) signUpException,
     required TResult Function(String message, String? devLogs) signOutException,
     required TResult Function(String message, String? devLogs) resetPassword,
+    required TResult Function(String message, String? devLogs) updateProfile,
   }) {
     return resetPassword(message, devLogs);
   }
@@ -691,6 +716,7 @@ class _$ResetPasswordException implements ResetPasswordException {
     TResult Function(String message, String? devLogs)? signUpException,
     TResult Function(String message, String? devLogs)? signOutException,
     TResult Function(String message, String? devLogs)? resetPassword,
+    TResult Function(String message, String? devLogs)? updateProfile,
   }) {
     return resetPassword?.call(message, devLogs);
   }
@@ -702,6 +728,7 @@ class _$ResetPasswordException implements ResetPasswordException {
     TResult Function(String message, String? devLogs)? signUpException,
     TResult Function(String message, String? devLogs)? signOutException,
     TResult Function(String message, String? devLogs)? resetPassword,
+    TResult Function(String message, String? devLogs)? updateProfile,
     required TResult orElse(),
   }) {
     if (resetPassword != null) {
@@ -717,6 +744,7 @@ class _$ResetPasswordException implements ResetPasswordException {
     required TResult Function(SignUpException value) signUpException,
     required TResult Function(SignOutException value) signOutException,
     required TResult Function(ResetPasswordException value) resetPassword,
+    required TResult Function(UpdateProfileException value) updateProfile,
   }) {
     return resetPassword(this);
   }
@@ -728,6 +756,7 @@ class _$ResetPasswordException implements ResetPasswordException {
     TResult Function(SignUpException value)? signUpException,
     TResult Function(SignOutException value)? signOutException,
     TResult Function(ResetPasswordException value)? resetPassword,
+    TResult Function(UpdateProfileException value)? updateProfile,
   }) {
     return resetPassword?.call(this);
   }
@@ -739,6 +768,7 @@ class _$ResetPasswordException implements ResetPasswordException {
     TResult Function(SignUpException value)? signUpException,
     TResult Function(SignOutException value)? signOutException,
     TResult Function(ResetPasswordException value)? resetPassword,
+    TResult Function(UpdateProfileException value)? updateProfile,
     required TResult orElse(),
   }) {
     if (resetPassword != null) {
@@ -759,5 +789,176 @@ abstract class ResetPasswordException implements Exceptions {
   @override
   @JsonKey(ignore: true)
   _$$ResetPasswordExceptionCopyWith<_$ResetPasswordException> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateProfileExceptionCopyWith<$Res>
+    implements $ExceptionsCopyWith<$Res> {
+  factory _$$UpdateProfileExceptionCopyWith(_$UpdateProfileException value,
+          $Res Function(_$UpdateProfileException) then) =
+      __$$UpdateProfileExceptionCopyWithImpl<$Res>;
+  @override
+  $Res call({String message, String? devLogs});
+}
+
+/// @nodoc
+class __$$UpdateProfileExceptionCopyWithImpl<$Res>
+    extends _$ExceptionsCopyWithImpl<$Res>
+    implements _$$UpdateProfileExceptionCopyWith<$Res> {
+  __$$UpdateProfileExceptionCopyWithImpl(_$UpdateProfileException _value,
+      $Res Function(_$UpdateProfileException) _then)
+      : super(_value, (v) => _then(v as _$UpdateProfileException));
+
+  @override
+  _$UpdateProfileException get _value =>
+      super._value as _$UpdateProfileException;
+
+  @override
+  $Res call({
+    Object? message = freezed,
+    Object? devLogs = freezed,
+  }) {
+    return _then(_$UpdateProfileException(
+      message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+      devLogs == freezed
+          ? _value.devLogs
+          : devLogs // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateProfileException implements UpdateProfileException {
+  const _$UpdateProfileException(this.message, [this.devLogs]);
+
+  @override
+  final String message;
+  @override
+  final String? devLogs;
+
+  @override
+  String toString() {
+    return 'Exceptions.updateProfile(message: $message, devLogs: $devLogs)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateProfileException &&
+            const DeepCollectionEquality().equals(other.message, message) &&
+            const DeepCollectionEquality().equals(other.devLogs, devLogs));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(message),
+      const DeepCollectionEquality().hash(devLogs));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$UpdateProfileExceptionCopyWith<_$UpdateProfileException> get copyWith =>
+      __$$UpdateProfileExceptionCopyWithImpl<_$UpdateProfileException>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String message, String? devLogs) loginException,
+    required TResult Function(String message, String? devLogs) signUpException,
+    required TResult Function(String message, String? devLogs) signOutException,
+    required TResult Function(String message, String? devLogs) resetPassword,
+    required TResult Function(String message, String? devLogs) updateProfile,
+  }) {
+    return updateProfile(message, devLogs);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message, String? devLogs)? loginException,
+    TResult Function(String message, String? devLogs)? signUpException,
+    TResult Function(String message, String? devLogs)? signOutException,
+    TResult Function(String message, String? devLogs)? resetPassword,
+    TResult Function(String message, String? devLogs)? updateProfile,
+  }) {
+    return updateProfile?.call(message, devLogs);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message, String? devLogs)? loginException,
+    TResult Function(String message, String? devLogs)? signUpException,
+    TResult Function(String message, String? devLogs)? signOutException,
+    TResult Function(String message, String? devLogs)? resetPassword,
+    TResult Function(String message, String? devLogs)? updateProfile,
+    required TResult orElse(),
+  }) {
+    if (updateProfile != null) {
+      return updateProfile(message, devLogs);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoginException value) loginException,
+    required TResult Function(SignUpException value) signUpException,
+    required TResult Function(SignOutException value) signOutException,
+    required TResult Function(ResetPasswordException value) resetPassword,
+    required TResult Function(UpdateProfileException value) updateProfile,
+  }) {
+    return updateProfile(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LoginException value)? loginException,
+    TResult Function(SignUpException value)? signUpException,
+    TResult Function(SignOutException value)? signOutException,
+    TResult Function(ResetPasswordException value)? resetPassword,
+    TResult Function(UpdateProfileException value)? updateProfile,
+  }) {
+    return updateProfile?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoginException value)? loginException,
+    TResult Function(SignUpException value)? signUpException,
+    TResult Function(SignOutException value)? signOutException,
+    TResult Function(ResetPasswordException value)? resetPassword,
+    TResult Function(UpdateProfileException value)? updateProfile,
+    required TResult orElse(),
+  }) {
+    if (updateProfile != null) {
+      return updateProfile(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UpdateProfileException implements Exceptions {
+  const factory UpdateProfileException(final String message,
+      [final String? devLogs]) = _$UpdateProfileException;
+
+  @override
+  String get message;
+  @override
+  String? get devLogs;
+  @override
+  @JsonKey(ignore: true)
+  _$$UpdateProfileExceptionCopyWith<_$UpdateProfileException> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -34,6 +34,24 @@ mixin _$ResetPasswordState {
   ///The pin code entered by the user
   List<String> get pinNumbers => throw _privateConstructorUsedError;
 
+  ///Time remaning to enter the pin
+  int get timeRemaningToEnterPin => throw _privateConstructorUsedError;
+
+  ///To check if the verification process is successful
+  bool get isVerificationSuccessful => throw _privateConstructorUsedError;
+
+  ///token received from the server after the verification process
+  String get token => throw _privateConstructorUsedError;
+
+  ///error message from the server after the verification process
+  String get errorMessageFromVerification => throw _privateConstructorUsedError;
+
+  ///new password of the user
+  Password get newPassword => throw _privateConstructorUsedError;
+
+  ///Status of the input form for new password
+  FormzStatus get newPasswordFormStatus => throw _privateConstructorUsedError;
+
   @JsonKey(ignore: true)
   $ResetPasswordStateCopyWith<ResetPasswordState> get copyWith =>
       throw _privateConstructorUsedError;
@@ -50,7 +68,13 @@ abstract class $ResetPasswordStateCopyWith<$Res> {
       String? submissionFailureMessage,
       ResponseModel? responseModel,
       String? stateReceived,
-      List<String> pinNumbers});
+      List<String> pinNumbers,
+      int timeRemaningToEnterPin,
+      bool isVerificationSuccessful,
+      String token,
+      String errorMessageFromVerification,
+      Password newPassword,
+      FormzStatus newPasswordFormStatus});
 
   $ResponseModelCopyWith<$Res>? get responseModel;
 }
@@ -72,6 +96,12 @@ class _$ResetPasswordStateCopyWithImpl<$Res>
     Object? responseModel = freezed,
     Object? stateReceived = freezed,
     Object? pinNumbers = freezed,
+    Object? timeRemaningToEnterPin = freezed,
+    Object? isVerificationSuccessful = freezed,
+    Object? token = freezed,
+    Object? errorMessageFromVerification = freezed,
+    Object? newPassword = freezed,
+    Object? newPasswordFormStatus = freezed,
   }) {
     return _then(_value.copyWith(
       email: email == freezed
@@ -98,6 +128,30 @@ class _$ResetPasswordStateCopyWithImpl<$Res>
           ? _value.pinNumbers
           : pinNumbers // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      timeRemaningToEnterPin: timeRemaningToEnterPin == freezed
+          ? _value.timeRemaningToEnterPin
+          : timeRemaningToEnterPin // ignore: cast_nullable_to_non_nullable
+              as int,
+      isVerificationSuccessful: isVerificationSuccessful == freezed
+          ? _value.isVerificationSuccessful
+          : isVerificationSuccessful // ignore: cast_nullable_to_non_nullable
+              as bool,
+      token: token == freezed
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String,
+      errorMessageFromVerification: errorMessageFromVerification == freezed
+          ? _value.errorMessageFromVerification
+          : errorMessageFromVerification // ignore: cast_nullable_to_non_nullable
+              as String,
+      newPassword: newPassword == freezed
+          ? _value.newPassword
+          : newPassword // ignore: cast_nullable_to_non_nullable
+              as Password,
+      newPasswordFormStatus: newPasswordFormStatus == freezed
+          ? _value.newPasswordFormStatus
+          : newPasswordFormStatus // ignore: cast_nullable_to_non_nullable
+              as FormzStatus,
     ));
   }
 
@@ -126,7 +180,13 @@ abstract class _$$_ResetPasswordStateCopyWith<$Res>
       String? submissionFailureMessage,
       ResponseModel? responseModel,
       String? stateReceived,
-      List<String> pinNumbers});
+      List<String> pinNumbers,
+      int timeRemaningToEnterPin,
+      bool isVerificationSuccessful,
+      String token,
+      String errorMessageFromVerification,
+      Password newPassword,
+      FormzStatus newPasswordFormStatus});
 
   @override
   $ResponseModelCopyWith<$Res>? get responseModel;
@@ -151,6 +211,12 @@ class __$$_ResetPasswordStateCopyWithImpl<$Res>
     Object? responseModel = freezed,
     Object? stateReceived = freezed,
     Object? pinNumbers = freezed,
+    Object? timeRemaningToEnterPin = freezed,
+    Object? isVerificationSuccessful = freezed,
+    Object? token = freezed,
+    Object? errorMessageFromVerification = freezed,
+    Object? newPassword = freezed,
+    Object? newPasswordFormStatus = freezed,
   }) {
     return _then(_$_ResetPasswordState(
       email: email == freezed
@@ -177,6 +243,30 @@ class __$$_ResetPasswordStateCopyWithImpl<$Res>
           ? _value._pinNumbers
           : pinNumbers // ignore: cast_nullable_to_non_nullable
               as List<String>,
+      timeRemaningToEnterPin: timeRemaningToEnterPin == freezed
+          ? _value.timeRemaningToEnterPin
+          : timeRemaningToEnterPin // ignore: cast_nullable_to_non_nullable
+              as int,
+      isVerificationSuccessful: isVerificationSuccessful == freezed
+          ? _value.isVerificationSuccessful
+          : isVerificationSuccessful // ignore: cast_nullable_to_non_nullable
+              as bool,
+      token: token == freezed
+          ? _value.token
+          : token // ignore: cast_nullable_to_non_nullable
+              as String,
+      errorMessageFromVerification: errorMessageFromVerification == freezed
+          ? _value.errorMessageFromVerification
+          : errorMessageFromVerification // ignore: cast_nullable_to_non_nullable
+              as String,
+      newPassword: newPassword == freezed
+          ? _value.newPassword
+          : newPassword // ignore: cast_nullable_to_non_nullable
+              as Password,
+      newPasswordFormStatus: newPasswordFormStatus == freezed
+          ? _value.newPasswordFormStatus
+          : newPasswordFormStatus // ignore: cast_nullable_to_non_nullable
+              as FormzStatus,
     ));
   }
 }
@@ -190,7 +280,13 @@ class _$_ResetPasswordState implements _ResetPasswordState {
       this.submissionFailureMessage,
       this.responseModel,
       this.stateReceived,
-      final List<String> pinNumbers = const ["", "", "", ""]})
+      final List<String> pinNumbers = const ["", "", "", ""],
+      this.timeRemaningToEnterPin = 30,
+      this.isVerificationSuccessful = false,
+      this.token = "",
+      this.errorMessageFromVerification = "",
+      this.newPassword = const Password.pure(),
+      this.newPasswordFormStatus = FormzStatus.pure})
       : _pinNumbers = pinNumbers;
 
   ///email of the user
@@ -226,9 +322,39 @@ class _$_ResetPasswordState implements _ResetPasswordState {
     return EqualUnmodifiableListView(_pinNumbers);
   }
 
+  ///Time remaning to enter the pin
+  @override
+  @JsonKey()
+  final int timeRemaningToEnterPin;
+
+  ///To check if the verification process is successful
+  @override
+  @JsonKey()
+  final bool isVerificationSuccessful;
+
+  ///token received from the server after the verification process
+  @override
+  @JsonKey()
+  final String token;
+
+  ///error message from the server after the verification process
+  @override
+  @JsonKey()
+  final String errorMessageFromVerification;
+
+  ///new password of the user
+  @override
+  @JsonKey()
+  final Password newPassword;
+
+  ///Status of the input form for new password
+  @override
+  @JsonKey()
+  final FormzStatus newPasswordFormStatus;
+
   @override
   String toString() {
-    return 'ResetPasswordState(email: $email, formStatus: $formStatus, submissionFailureMessage: $submissionFailureMessage, responseModel: $responseModel, stateReceived: $stateReceived, pinNumbers: $pinNumbers)';
+    return 'ResetPasswordState(email: $email, formStatus: $formStatus, submissionFailureMessage: $submissionFailureMessage, responseModel: $responseModel, stateReceived: $stateReceived, pinNumbers: $pinNumbers, timeRemaningToEnterPin: $timeRemaningToEnterPin, isVerificationSuccessful: $isVerificationSuccessful, token: $token, errorMessageFromVerification: $errorMessageFromVerification, newPassword: $newPassword, newPasswordFormStatus: $newPasswordFormStatus)';
   }
 
   @override
@@ -246,7 +372,19 @@ class _$_ResetPasswordState implements _ResetPasswordState {
             const DeepCollectionEquality()
                 .equals(other.stateReceived, stateReceived) &&
             const DeepCollectionEquality()
-                .equals(other._pinNumbers, _pinNumbers));
+                .equals(other._pinNumbers, _pinNumbers) &&
+            const DeepCollectionEquality()
+                .equals(other.timeRemaningToEnterPin, timeRemaningToEnterPin) &&
+            const DeepCollectionEquality().equals(
+                other.isVerificationSuccessful, isVerificationSuccessful) &&
+            const DeepCollectionEquality().equals(other.token, token) &&
+            const DeepCollectionEquality().equals(
+                other.errorMessageFromVerification,
+                errorMessageFromVerification) &&
+            const DeepCollectionEquality()
+                .equals(other.newPassword, newPassword) &&
+            const DeepCollectionEquality()
+                .equals(other.newPasswordFormStatus, newPasswordFormStatus));
   }
 
   @override
@@ -257,7 +395,13 @@ class _$_ResetPasswordState implements _ResetPasswordState {
       const DeepCollectionEquality().hash(submissionFailureMessage),
       const DeepCollectionEquality().hash(responseModel),
       const DeepCollectionEquality().hash(stateReceived),
-      const DeepCollectionEquality().hash(_pinNumbers));
+      const DeepCollectionEquality().hash(_pinNumbers),
+      const DeepCollectionEquality().hash(timeRemaningToEnterPin),
+      const DeepCollectionEquality().hash(isVerificationSuccessful),
+      const DeepCollectionEquality().hash(token),
+      const DeepCollectionEquality().hash(errorMessageFromVerification),
+      const DeepCollectionEquality().hash(newPassword),
+      const DeepCollectionEquality().hash(newPasswordFormStatus));
 
   @JsonKey(ignore: true)
   @override
@@ -273,7 +417,13 @@ abstract class _ResetPasswordState implements ResetPasswordState {
       final String? submissionFailureMessage,
       final ResponseModel? responseModel,
       final String? stateReceived,
-      final List<String> pinNumbers}) = _$_ResetPasswordState;
+      final List<String> pinNumbers,
+      final int timeRemaningToEnterPin,
+      final bool isVerificationSuccessful,
+      final String token,
+      final String errorMessageFromVerification,
+      final Password newPassword,
+      final FormzStatus newPasswordFormStatus}) = _$_ResetPasswordState;
 
   @override
 
@@ -299,6 +449,30 @@ abstract class _ResetPasswordState implements ResetPasswordState {
 
   ///The pin code entered by the user
   List<String> get pinNumbers;
+  @override
+
+  ///Time remaning to enter the pin
+  int get timeRemaningToEnterPin;
+  @override
+
+  ///To check if the verification process is successful
+  bool get isVerificationSuccessful;
+  @override
+
+  ///token received from the server after the verification process
+  String get token;
+  @override
+
+  ///error message from the server after the verification process
+  String get errorMessageFromVerification;
+  @override
+
+  ///new password of the user
+  Password get newPassword;
+  @override
+
+  ///Status of the input form for new password
+  FormzStatus get newPasswordFormStatus;
   @override
   @JsonKey(ignore: true)
   _$$_ResetPasswordStateCopyWith<_$_ResetPasswordState> get copyWith =>

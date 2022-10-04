@@ -45,4 +45,42 @@ class ResetPasswordDatasourceImpl implements ResetPasswordDatasource {
           ErrorMessages.unexpectedErrorMessage);
     }
   }
+
+  @override
+  Rvf<String> confirmPasswordReset(String otp, String state) async {
+    try {
+      final response = await http.post(
+          Uri.parse(
+              'https://qa.tellnshare.co/demo/api/v1/user/password-reset/confirm'),
+          body: {
+            "otp": otp,
+            "state": state,
+          });
+
+      final jsonResponse = json.decode(response.body);
+
+      if (response.statusCode == 200) {
+        final token = jsonResponse['body']['token'];
+
+        if (token != null) {
+          return token;
+        } else {
+          throw const Exceptions.resetPassword(
+              ErrorMessages.verificationErrorMessage);
+        }
+      } else {
+        Logger().w(jsonResponse);
+        throw Exceptions.resetPassword(
+          jsonResponse['message'] ??
+              ErrorMessages
+                  .verificationErrorMessage, // get the error message from the response
+        );
+      }
+    } on ResetPasswordException catch (e) {
+      throw Exceptions.resetPassword(e.message);
+    } catch (e) {
+      throw const Exceptions.resetPassword(
+          ErrorMessages.unexpectedErrorMessage);
+    }
+  }
 }

@@ -20,5 +20,23 @@ class ResetPasswordState with _$ResetPasswordState {
 
     ///The pin code entered by the user
     @Default(["", "", "", ""]) List<String> pinNumbers,
+
+    ///Time remaning to enter the pin
+    @Default(30) int timeRemaningToEnterPin,
+
+    ///To check if the verification process is successful
+    @Default(false) bool isVerificationSuccessful,
+
+    ///token received from the server after the verification process
+    @Default("") String token,
+
+    ///error message from the server after the verification process
+    @Default("") String errorMessageFromVerification,
+
+    ///new password of the user
+    @Default(Password.pure()) Password newPassword,
+
+    ///Status of the input form for new password
+    @Default(FormzStatus.pure) FormzStatus newPasswordFormStatus,
   }) = _ResetPasswordState;
 }

@@ -1,5 +1,9 @@
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
+import 'package:suntech_it_e_com_app/core/data/datasources/user_data_datasource.dart';
+import 'package:suntech_it_e_com_app/core/data/datasources/user_data_datasource_impl.dart';
+import 'package:suntech_it_e_com_app/core/data/repositories/user_data_repository.dart';
+import 'package:suntech_it_e_com_app/core/data/repositories/user_data_repository_impl.dart';
 import 'package:suntech_it_e_com_app/features/auth/login/data/datasources/login_datasource.dart';
 import 'package:suntech_it_e_com_app/features/auth/login/data/datasources/login_datasource_impl.dart';
 import 'package:suntech_it_e_com_app/features/auth/login/data/repositories/login_repository.dart';
@@ -18,6 +22,18 @@ final serviceLocator = GetIt.instance;
 void setupLocator() {
   ///Flutter secure storage
   registerLazySingleton(const FlutterSecureStorage());
+
+  ///user details
+  ///data source
+  registerLazySingleton<UserDataDataSource>(
+      UserDataDataSourceImpl(flutterSecureStorage: serviceLocator()));
+
+  ///Repo
+  registerLazySingleton<UserDataRepository>(
+    UserDataRepositoryImpl(
+      userDataDataSource: serviceLocator(),
+    ),
+  );
 
   ///Sign up
   //data source
