@@ -29,4 +29,7 @@ class AppConstants {
 
   ///Home page horizontal margin
   static final homePageHorizontalMargin = 30.w;
+
+  ///Light black color
+  static const lightBlackColor = Color(0xff262626);
 }
